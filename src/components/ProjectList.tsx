@@ -6,18 +6,28 @@ interface Props {
   selectedProject: CIPProject | null;
   searchActive: boolean;
   onSelect: (project: CIPProject) => void;
+  onClose?: () => void;
 }
 
-export default function ProjectList({ projects, selectedProject, searchActive, onSelect }: Props) {
+export default function ProjectList({ projects, selectedProject, searchActive, onSelect, onClose }: Props) {
   return (
     <div className="flex flex-col h-full">
       {/* Header */}
-      <div className="flex-none px-3 py-2 bg-gray-50 border-b border-gray-200">
+      <div className="flex-none px-3 py-2 bg-gray-50 border-b border-gray-200 flex items-center justify-between">
         <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
           {searchActive
             ? `${projects.length} nearby project${projects.length !== 1 ? 's' : ''}`
             : `All projects (${projects.length})`}
         </p>
+        {onClose && (
+          <button
+            onClick={onClose}
+            className="text-gray-400 hover:text-gray-700 text-lg leading-none ml-2"
+            aria-label="Close list"
+          >
+            ×
+          </button>
+        )}
       </div>
 
       {/* List */}

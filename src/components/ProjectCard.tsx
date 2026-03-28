@@ -13,35 +13,21 @@ export default function ProjectCard({ project, selected, onClick }: Props) {
   return (
     <button
       onClick={() => onClick(project)}
-      className={`w-full text-left px-3 py-2.5 border-b border-gray-100 hover:bg-blue-50 transition-colors focus:outline-none focus:bg-blue-50 ${
-        selected ? 'bg-blue-50 border-l-4 border-l-blue-500' : ''
+      className={`w-full text-left px-3 py-2 border-b border-gray-100 hover:bg-slate-50 transition-colors focus:outline-none focus:bg-slate-50 ${
+        selected ? 'bg-slate-50 border-l-4 border-l-slate-700' : ''
       }`}
     >
       {/* Title row */}
-      <div className="flex items-start gap-2">
-        {/* Phase dot */}
+      <div className="flex items-center gap-2">
         <span
-          className="mt-1 flex-none rounded-full border-2 border-white shadow-sm"
-          style={{ width: 10, height: 10, background: phaseColor, minWidth: 10 }}
+          className="flex-none rounded-full"
+          style={{ width: 8, height: 8, background: phaseColor, minWidth: 8 }}
         />
-        <p className="text-sm font-semibold text-gray-800 leading-tight flex-1 min-w-0">
+        <p className="text-sm font-semibold text-gray-800 leading-tight flex-1 min-w-0 truncate">
           {project.title}
         </p>
-      </div>
-
-      {/* Tags row */}
-      <div className="mt-1 ml-4 flex flex-wrap gap-1 items-center">
-        <span
-          className="text-xs px-1.5 py-0.5 rounded font-medium text-white"
-          style={{ background: phaseColor }}
-        >
-          {project.phase}
-        </span>
-        <span className="text-xs px-1.5 py-0.5 rounded bg-gray-100 text-gray-600">
-          {project.category}
-        </span>
         {project.distanceFromSearch !== undefined && (
-          <span className="text-xs text-gray-400 ml-auto">
+          <span className="text-xs text-gray-400 flex-none ml-1">
             {project.distanceFromSearch < 0.1
               ? `<0.1 mi`
               : `${project.distanceFromSearch.toFixed(1)} mi`}
@@ -49,9 +35,9 @@ export default function ProjectCard({ project, selected, onClick }: Props) {
         )}
       </div>
 
-      {/* Plain summary */}
-      <p className="mt-1 ml-4 text-xs text-gray-500 leading-snug line-clamp-2">
-        {project.plainSummary}
+      {/* Subtitle row */}
+      <p className="mt-0.5 ml-4 text-xs text-gray-400 leading-tight">
+        {project.category} · {project.phase}
       </p>
     </button>
   );

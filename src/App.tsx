@@ -5,13 +5,10 @@ import type { CIPProject, ProjectCategory } from './types/project';
 import type { Report } from './types/report';
 import { haversineDistance } from './utils/geo';
 import { useReports } from './hooks/useReports';
-import AppHeader from './components/AppHeader';
-import PrototypeBanner from './components/PrototypeBanner';
+import TopBar from './components/TopBar';
 import MapView from './components/Map';
-import SearchBar from './components/SearchBar';
 import ProjectList from './components/ProjectList';
 import ProjectDetail from './components/ProjectDetail';
-import CategoryFilter from './components/CategoryFilter';
 import ReportModal from './components/ReportModal';
 import PriorityList from './components/PriorityList';
 
@@ -30,6 +27,7 @@ export default function App() {
   const [radiusMiles, setRadiusMiles] = useState<number>(DEFAULT_RADIUS);
   const [selectedProject, setSelectedProject] = useState<CIPProject | null>(null);
   const [activeCategories, setActiveCategories] = useState<Set<ProjectCategory>>(new Set());
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   // Reporting state
   const { reports, priorityReports, likedIds, addReport, likeReport } = useReports();
@@ -57,6 +55,13 @@ export default function App() {
   const handleSearch = useCallback((loc: SearchLocation) => {
     setSearchLocation(loc);
     setSelectedProject(null);
+    setSidebarOpen(true);
+  }, []);
+
+  const handleClearSearch = useCallback(() => {
+    setSearchLocation(null);
+    setSelectedProject(null);
+    setSidebarOpen(false);
   }, []);
 
   const handleProjectSelect = useCallback((project: CIPProject) => {
@@ -74,6 +79,7 @@ export default function App() {
         next.delete(category);
       } else {
         next.add(category);
+        setSidebarOpen(true);
       }
       return next;
     });
@@ -107,36 +113,27 @@ export default function App() {
 
   return (
     <div className="flex flex-col h-screen overflow-hidden bg-gray-50">
-      <PrototypeBanner />
-      <AppHeader />
+      <TopBar
+        searchLocation={searchLocation}
+        onSearch={handleSearch}
+        onClearSearch={handleClearSearch}
+        mapRef={mapRef}
+        allProjects={projects}
+        activeCategories={activeCategories}
+        onToggleCategory={handleCategoryToggle}
+        onClearCategories={handleClearCategories}
+        radiusMiles={radiusMiles}
+        radiusOptions={[...RADIUS_OPTIONS]}
+        onRadiusChange={setRadiusMiles}
+        nearbyCount={searchLocation ? nearbyProjects.length : null}
+        sidebarOpen={sidebarOpen}
+        onToggleSidebar={() => setSidebarOpen(v => !v)}
+      />
 
-      {/* Search + Filter bar */}
-      <div className="flex-none bg-white border-b border-gray-200 shadow-sm z-10">
-        <div className="px-3 pt-2 pb-1">
-          <SearchBar
-            onSearch={handleSearch}
-            mapRef={mapRef}
-            searchLocation={searchLocation}
-            radiusMiles={radiusMiles}
-            onRadiusChange={setRadiusMiles}
-            radiusOptions={[...RADIUS_OPTIONS]}
-            nearbyCount={searchLocation ? nearbyProjects.length : null}
-          />
-        </div>
-        <div className="px-3 pb-2">
-          <CategoryFilter
-            projects={projects}
-            activeCategories={activeCategories}
-            onToggle={handleCategoryToggle}
-            onClear={handleClearCategories}
-          />
-        </div>
-      </div>
-
-      {/* Main content area */}
-      <div className="flex flex-1 overflow-hidden flex-col md:flex-row">
-        {/* Map */}
-        <div className="flex-1 md:flex-[3] relative min-h-[40vh]">
+      {/* Main content area — map fills full width, sidebar slides in */}
+      <div className="flex flex-1 overflow-hidden relative">
+        {/* Map — always full width */}
+        <div className="absolute inset-0">
           <MapView
             projects={displayProjects}
             searchLocation={searchLocation}
@@ -150,14 +147,23 @@ export default function App() {
           />
         </div>
 
-        {/* Sidebar */}
-        <div className="flex-none md:flex-[2] md:max-w-sm w-full overflow-y-auto border-t md:border-t-0 md:border-l border-gray-200 bg-white">
-          <ProjectList
-            projects={displayProjects}
-            selectedProject={selectedProject}
-            searchActive={!!searchLocation}
-            onSelect={handleProjectSelect}
-          />
+        {/* Sidebar — slides in from right over the map */}
+        <div
+          className="absolute top-0 right-0 bottom-0 overflow-hidden bg-white shadow-xl z-[400]"
+          style={{
+            width: sidebarOpen ? 320 : 0,
+            transition: 'width 200ms ease',
+          }}
+        >
+          <div style={{ width: 320 }} className="h-full overflow-y-auto">
+            <ProjectList
+              projects={displayProjects}
+              selectedProject={selectedProject}
+              searchActive={!!searchLocation}
+              onSelect={handleProjectSelect}
+              onClose={() => setSidebarOpen(false)}
+            />
+          </div>
         </div>
       </div>
 
