@@ -1,0 +1,46 @@
+{
+  "workItemId": "S002",
+  "planDirectory": ".carl/plans/S002-mobile-ui-fixes/",
+  "workItem": {
+    "id": "S002",
+    "title": "Mobile UI Fixes",
+    "description": "Only do this for the mobile version:\n\n1. Make the project list menu be able to be contracted all the way down instead of expanded up.\n2. Make sure the report and phase key buttons are at the top of the project list menu, when the user contracts the menu, these buttons should also go down as well.\n3. Keep in mind in mobile there is a search bar at the bottom of screens. Make sure the drop down doesn't go behind this search bar and add some room at the bottom.\n4. When the user presses the information button at the top, the menu appears behind other menus. Make this appear at the top.",
+    "type": "Task",
+    "state": "Planned",
+    "priority": null,
+    "acceptanceCriteria": null,
+    "url": null
+  },
+  "relatedItems": [],
+  "artifactLinks": [],
+  "preferences": { "defaultMode": "fast", "outputDir": ".carl/plans" },
+  "workspaceState": null,
+  "planningMode": "fast",
+  "scratchMode": true,
+  "userDescription": "Mobile-only fixes: collapsible bottom sheet (contracted all the way down), report+phase key buttons in sheet handle area, safe-area inset bottom padding, info modal z-index fix.",
+  "quickScan": {
+    "patterns": [
+      { "type": "Frontend", "file": "src/App.tsx", "desc": "Root component — bottom sheet state (peek/full), isDesktop hook, mobile/desktop layout split" },
+      { "type": "Frontend", "file": "src/components/Map.tsx", "desc": "MapView — Report FAB and MapLegend positioned absolutely using bottomPad prop" },
+      { "type": "Frontend", "file": "src/components/MapLegend.tsx", "desc": "Collapsible phase key legend — self-contained open/close state" },
+      { "type": "Frontend", "file": "src/components/TopBar.tsx", "desc": "Merged header — info modal at z-[700], filter dropdown" },
+      { "type": "Frontend", "file": "src/components/ProjectList.tsx", "desc": "Project list rendered inside the bottom sheet" },
+      { "type": "Frontend", "file": "src/components/ProjectDetail.tsx", "desc": "Project detail with inline prop" }
+    ],
+    "technologies": ["React 18", "TypeScript", "Tailwind CSS v3", "Leaflet.js"],
+    "integrationPoints": [],
+    "duration": 8.2
+  },
+  "inferredScope": "Frontend/UI — Mobile Bottom Sheet",
+  "selectedScope": ["Frontend/UI"],
+  "scopeRationale": {
+    "keywords": ["mobile", "bottom sheet", "collapsed", "z-index", "safe-area", "report", "phase key"],
+    "patterns": ["App.tsx sheetSnap state", "MapView bottomPad controls", "TopBar info modal z-index"],
+    "score": 22,
+    "confidence": "high"
+  },
+  "phase": "gather",
+  "createdAt": "2026-03-28T00:00:00Z",
+  "updatedAt": "2026-03-28T00:00:00Z",
+  "lastFetchedAt": "2026-03-28T00:00:00Z"
+}

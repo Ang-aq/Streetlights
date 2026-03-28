@@ -220,6 +220,7 @@ interface Props {
   onReportLike: (id: string) => void;
   onOpenPriorityList: () => void;
   bottomPad: number;
+  hideMapControls?: boolean;
 }
 
 export default function MapView({
@@ -233,6 +234,7 @@ export default function MapView({
   onReportLike,
   onOpenPriorityList,
   bottomPad,
+  hideMapControls = false,
 }: Props) {
   return (
     <div className="relative h-full w-full">
@@ -266,27 +268,31 @@ export default function MapView({
       </MapContainer>
 
       {/* Legend — bottom-left, above the bottom sheet */}
-      <div className="absolute left-2 z-[500] pointer-events-none" style={{ bottom: bottomPad }}>
-        <MapLegend />
-      </div>
+      {!hideMapControls && (
+        <div className="absolute left-2 z-[500] pointer-events-none" style={{ bottom: bottomPad }}>
+          <MapLegend />
+        </div>
+      )}
 
       {/* Report FAB — bottom-right, above the bottom sheet, warning triangle icon only */}
-      <button
-        onClick={onOpenPriorityList}
-        title="View community reports"
-        className="absolute right-3 z-[500] p-3 bg-amber-500 hover:bg-amber-400
-                   text-white rounded-full shadow-lg active:scale-95 transition-all"
-        style={{ bottom: bottomPad }}
-      >
-        <svg width="20" height="18" viewBox="0 0 20 18" fill="none" aria-hidden="true">
-          <path
-            d="M10 2L2 17h16L10 2z"
-            stroke="white" strokeWidth="1.8" strokeLinejoin="round" fill="none"
-          />
-          <path d="M10 8v4" stroke="white" strokeWidth="2" strokeLinecap="round" />
-          <circle cx="10" cy="14.5" r="1.1" fill="white" />
-        </svg>
-      </button>
+      {!hideMapControls && (
+        <button
+          onClick={onOpenPriorityList}
+          title="View community reports"
+          className="absolute right-3 z-[500] p-3 bg-amber-500 hover:bg-amber-400
+                     text-white rounded-full shadow-lg active:scale-95 transition-all"
+          style={{ bottom: bottomPad }}
+        >
+          <svg width="20" height="18" viewBox="0 0 20 18" fill="none" aria-hidden="true">
+            <path
+              d="M10 2L2 17h16L10 2z"
+              stroke="white" strokeWidth="1.8" strokeLinejoin="round" fill="none"
+            />
+            <path d="M10 8v4" stroke="white" strokeWidth="2" strokeLinecap="round" />
+            <circle cx="10" cy="14.5" r="1.1" fill="white" />
+          </svg>
+        </button>
+      )}
     </div>
   );
 }

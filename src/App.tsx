@@ -7,6 +7,7 @@ import { haversineDistance } from './utils/geo';
 import { useReports } from './hooks/useReports';
 import TopBar from './components/TopBar';
 import MapView from './components/Map';
+import MapLegend from './components/MapLegend';
 import ProjectList from './components/ProjectList';
 import ProjectDetail from './components/ProjectDetail';
 import ReportModal from './components/ReportModal';
@@ -33,10 +34,10 @@ function useIsDesktop() {
 const RADIUS_OPTIONS = [0.25, 0.5, 1, 2, 5] as const;
 const DEFAULT_RADIUS = 1;
 
-// Height of the bottom sheet in peek (collapsed) state
+// Height of the bottom sheet in peek state
 const PEEK_HEIGHT = 260;
-// Offset for map controls so they sit above the peek sheet
-const MAP_BOTTOM_PAD = PEEK_HEIGHT + 8;
+// Height of the bottom sheet in collapsed state (handle bar only)
+const COLLAPSED_HEIGHT = 44;
 
 export default function App() {
   const mapRef = useRef<LeafletMap | null>(null);
@@ -44,7 +45,7 @@ export default function App() {
   const [radiusMiles, setRadiusMiles] = useState<number>(DEFAULT_RADIUS);
   const [selectedProject, setSelectedProject] = useState<CIPProject | null>(null);
   const [activeCategories, setActiveCategories] = useState<Set<ProjectCategory>>(new Set());
-  const [sheetSnap, setSheetSnap] = useState<'peek' | 'full'>('peek');
+  const [sheetSnap, setSheetSnap] = useState<'collapsed' | 'peek' | 'full'>('peek');
   const isDesktop = useIsDesktop();
 
   // Reporting state
@@ -220,7 +221,8 @@ export default function App() {
               onMapClick={handleMapClick}
               onReportLike={likeReport}
               onOpenPriorityList={() => setShowPriorityList(true)}
-              bottomPad={MAP_BOTTOM_PAD}
+              bottomPad={24}
+              hideMapControls
             />
           </div>
 
@@ -228,14 +230,23 @@ export default function App() {
           <div
             className="absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-2xl z-[400] flex flex-col"
             style={{
-              height: sheetSnap === 'full' ? '65vh' : PEEK_HEIGHT,
+              height: sheetSnap === 'full'
+                ? '65vh'
+                : sheetSnap === 'collapsed'
+                  ? COLLAPSED_HEIGHT
+                  : PEEK_HEIGHT,
               transition: 'height 250ms ease',
             }}
           >
-            {/* Handle bar — tap to toggle peek ↔ full */}
+            {/* Handle bar — tap area cycles collapsed→peek→full→peek; collapse button slides down */}
             <div
               className="flex-none flex items-center justify-between px-4 py-2.5 cursor-pointer select-none border-b border-gray-100"
-              onClick={() => setSheetSnap(v => v === 'full' ? 'peek' : 'full')}
+              style={{ minHeight: COLLAPSED_HEIGHT }}
+              onClick={() =>
+                setSheetSnap(v =>
+                  v === 'collapsed' ? 'peek' : v === 'peek' ? 'full' : 'peek'
+                )
+              }
             >
               <div className="flex items-center gap-2.5 min-w-0">
                 <div className="w-8 h-1 rounded-full bg-gray-300 flex-none" />
@@ -243,17 +254,34 @@ export default function App() {
                   {sheetLabel}
                 </span>
               </div>
-              {/* Chevron — points up when full, down when peek */}
-              <svg
-                width="14" height="14" viewBox="0 0 14 14" fill="none"
-                className={`flex-none text-gray-400 transition-transform duration-200 ${sheetSnap === 'full' ? 'rotate-180' : ''}`}
-              >
-                <path d="M2 5l5 4 5-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <div className="flex items-center gap-1">
+                {/* Collapse button — visible when not already collapsed */}
+                {sheetSnap !== 'collapsed' && (
+                  <button
+                    aria-label="Collapse sheet"
+                    onClick={e => { e.stopPropagation(); setSheetSnap('collapsed'); }}
+                    className="p-1 text-gray-400 hover:text-gray-600 transition-colors"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M2 5l5 4 5-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </button>
+                )}
+                {/* Main chevron — up when collapsed/peek (expand), down when full (collapse to peek) */}
+                <svg
+                  width="14" height="14" viewBox="0 0 14 14" fill="none"
+                  className={`flex-none text-gray-400 transition-transform duration-200 ${sheetSnap === 'full' ? 'rotate-180' : ''}`}
+                >
+                  <path d="M2 5l5 4 5-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
             </div>
 
             {/* Sheet content — scrollable */}
-            <div className="flex-1 overflow-y-auto">
+            <div
+              className="flex-1 overflow-y-auto"
+              style={{ paddingBottom: 'max(16px, env(safe-area-inset-bottom))' }}
+            >
               {selectedProject ? (
                 <ProjectDetail
                   project={selectedProject}
@@ -261,12 +289,31 @@ export default function App() {
                   inline
                 />
               ) : (
-                <ProjectList
-                  projects={displayProjects}
-                  selectedProject={null}
-                  searchActive={!!searchLocation}
-                  onSelect={handleProjectSelect}
-                />
+                <>
+                  {/* Action row: MapLegend + Reports FAB — only when showing project list */}
+                  <div className="flex items-start gap-2 px-3 py-2 border-b border-gray-100">
+                    <MapLegend />
+                    <button
+                      onClick={() => setShowPriorityList(true)}
+                      title="View community reports"
+                      className="flex items-center gap-1.5 px-3 py-1.5 bg-amber-500 hover:bg-amber-400
+                                 text-white rounded-full text-xs font-semibold shadow active:scale-95 transition-all"
+                    >
+                      <svg width="14" height="13" viewBox="0 0 20 18" fill="none" aria-hidden="true">
+                        <path d="M10 2L2 17h16L10 2z" stroke="white" strokeWidth="1.8" strokeLinejoin="round" fill="none" />
+                        <path d="M10 8v4" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                        <circle cx="10" cy="14.5" r="1.1" fill="white" />
+                      </svg>
+                      Reports
+                    </button>
+                  </div>
+                  <ProjectList
+                    projects={displayProjects}
+                    selectedProject={null}
+                    searchActive={!!searchLocation}
+                    onSelect={handleProjectSelect}
+                  />
+                </>
               )}
             </div>
           </div>
