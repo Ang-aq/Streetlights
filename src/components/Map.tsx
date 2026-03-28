@@ -218,9 +218,10 @@ interface Props {
   likedIds: Set<string>;
   onMapClick: (lat: number, lng: number) => void;
   onReportLike: (id: string) => void;
-  onOpenPriorityList: () => void;
+  onStartReport: () => void;
   bottomPad: number;
   hideMapControls?: boolean;
+  pickingLocation?: boolean;
 }
 
 export default function MapView({
@@ -232,12 +233,13 @@ export default function MapView({
   likedIds,
   onMapClick,
   onReportLike,
-  onOpenPriorityList,
+  onStartReport,
   bottomPad,
   hideMapControls = false,
+  pickingLocation = false,
 }: Props) {
   return (
-    <div className="relative h-full w-full">
+    <div className={`relative h-full w-full${pickingLocation ? ' cursor-crosshair' : ''}`}>
       <MapContainer
         center={RICHMOND_CENTER}
         zoom={DEFAULT_ZOOM}
@@ -277,8 +279,8 @@ export default function MapView({
       {/* Report FAB — bottom-right, above the bottom sheet, warning triangle icon only */}
       {!hideMapControls && (
         <button
-          onClick={onOpenPriorityList}
-          title="View community reports"
+          onClick={onStartReport}
+          title="Report an infrastructure issue"
           className="absolute right-3 z-[500] p-3 bg-amber-500 hover:bg-amber-400
                      text-white rounded-full shadow-lg active:scale-95 transition-all"
           style={{ bottom: bottomPad }}

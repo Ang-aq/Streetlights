@@ -11,6 +11,7 @@ import MapLegend from './components/MapLegend';
 import ProjectList from './components/ProjectList';
 import ProjectDetail from './components/ProjectDetail';
 import ReportModal from './components/ReportModal';
+import ReportIntentPrompt from './components/ReportIntentPrompt';
 import PriorityList from './components/PriorityList';
 
 export interface SearchLocation {
@@ -18,6 +19,15 @@ export interface SearchLocation {
   lng: number;
   displayName: string;
 }
+
+// ─── Reporting state machine ───────────────────────────────────────────────────
+type ReportingStep =
+  | { kind: 'idle' }
+  | { kind: 'intent' }
+  | { kind: 'pickingLocation' }
+  | { kind: 'pickingType'; lat: number; lng: number };
+
+const IDLE: ReportingStep = { kind: 'idle' };
 
 function useIsDesktop() {
   const [isDesktop, setIsDesktop] = useState(() => window.innerWidth >= 768);
@@ -48,9 +58,9 @@ export default function App() {
   const [sheetSnap, setSheetSnap] = useState<'collapsed' | 'peek'>('peek');
   const isDesktop = useIsDesktop();
 
-  // Reporting state
+  // Reporting state machine
   const { reports, priorityReports, likedIds, addReport, likeReport } = useReports();
-  const [reportClickPos, setReportClickPos] = useState<{ lat: number; lng: number } | null>(null);
+  const [reportingStep, setReportingStep] = useState<ReportingStep>(IDLE);
   const [showPriorityList, setShowPriorityList] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
 
@@ -120,15 +130,38 @@ export default function App() {
     setActiveCategories(new Set());
   }, []);
 
-  const handleMapClick = useCallback((lat: number, lng: number) => {
-    setReportClickPos({ lat, lng });
+  // Step 1 → 2: user confirmed intent, now picking location
+  const handleStartReport = useCallback(() => {
+    setReportingStep({ kind: 'intent' });
   }, []);
 
+  const handleIntentConfirm = useCallback(() => {
+    setReportingStep({ kind: 'pickingLocation' });
+  }, []);
+
+  const handleReportCancel = useCallback(() => {
+    setReportingStep(IDLE);
+  }, []);
+
+  // Step 2 → 3: map tapped while picking location
+  const handleMapClick = useCallback((lat: number, lng: number) => {
+    setReportingStep(prev => {
+      if (prev.kind === 'pickingLocation') {
+        return { kind: 'pickingType', lat, lng };
+      }
+      return prev;
+    });
+  }, []);
+
+  // Step 3 → idle: report submitted
   const handleReportSubmit = useCallback((typeId: import('./types/report').ReportTypeId) => {
-    if (!reportClickPos) return;
-    addReport(typeId, reportClickPos.lat, reportClickPos.lng);
-    setReportClickPos(null);
-  }, [reportClickPos, addReport]);
+    setReportingStep(prev => {
+      if (prev.kind === 'pickingType') {
+        addReport(typeId, prev.lat, prev.lng);
+      }
+      return IDLE;
+    });
+  }, [addReport]);
 
   const handleLocateReport = useCallback((report: Report) => {
     setShowPriorityList(false);
@@ -145,6 +178,8 @@ export default function App() {
     : searchLocation
       ? `${displayProjects.length} nearby project${displayProjects.length !== 1 ? 's' : ''}`
       : `${displayProjects.length} projects`;
+
+  const isPickingLocation = reportingStep.kind === 'pickingLocation';
 
   return (
     <div className="flex flex-col h-screen overflow-hidden bg-gray-50">
@@ -165,12 +200,13 @@ export default function App() {
         onShowInfo={setShowInfo}
       />
 
-      {/* Mobile-only controls bar: Reports + Phase Key, pinned below TopBar */}
+      {/* Mobile-only controls bar: Report + Community Reports + Phase Key */}
       {!isDesktop && (
         <div className="flex-none flex items-center justify-end gap-2 px-3 py-1.5 bg-white border-b border-gray-100">
+          {/* Amber circle: starts the new report flow */}
           <button
-            onClick={() => setShowPriorityList(true)}
-            title="View community reports"
+            onClick={handleStartReport}
+            title="Report an infrastructure issue"
             className="p-2 bg-amber-500 hover:bg-amber-400 text-white rounded-full shadow active:scale-95 transition-all"
           >
             <svg width="16" height="14" viewBox="0 0 20 18" fill="none" aria-hidden="true">
@@ -179,7 +215,27 @@ export default function App() {
               <circle cx="10" cy="14.5" r="1.1" fill="white" />
             </svg>
           </button>
+          {/* Community Reports link */}
+          <button
+            onClick={() => setShowPriorityList(true)}
+            className="text-xs font-medium text-amber-700 hover:text-amber-900 px-1.5 py-1 rounded hover:bg-amber-50 transition-colors whitespace-nowrap"
+          >
+            Reports ({reports.length})
+          </button>
           <MapLegend dropdown />
+        </div>
+      )}
+
+      {/* Picking-location banner — shown across the top of the map */}
+      {isPickingLocation && (
+        <div className="flex-none flex items-center justify-between px-4 py-2 bg-amber-500 text-white text-sm font-medium z-[600]">
+          <span>Tap the map to place your report pin</span>
+          <button
+            onClick={handleReportCancel}
+            className="ml-3 text-white/80 hover:text-white underline text-xs"
+          >
+            Cancel
+          </button>
         </div>
       )}
 
@@ -198,8 +254,9 @@ export default function App() {
               likedIds={likedIds}
               onMapClick={handleMapClick}
               onReportLike={likeReport}
-              onOpenPriorityList={() => setShowPriorityList(true)}
+              onStartReport={handleStartReport}
               bottomPad={24}
+              pickingLocation={isPickingLocation}
             />
           </div>
 
@@ -248,9 +305,10 @@ export default function App() {
               likedIds={likedIds}
               onMapClick={handleMapClick}
               onReportLike={likeReport}
-              onOpenPriorityList={() => setShowPriorityList(true)}
+              onStartReport={handleStartReport}
               bottomPad={24}
               hideMapControls
+              pickingLocation={isPickingLocation}
             />
           </div>
 
@@ -307,13 +365,21 @@ export default function App() {
         </div>
       )}
 
-      {/* Report modal */}
-      {reportClickPos && (
+      {/* Step 1: intent prompt */}
+      {reportingStep.kind === 'intent' && (
+        <ReportIntentPrompt
+          onConfirm={handleIntentConfirm}
+          onCancel={handleReportCancel}
+        />
+      )}
+
+      {/* Step 3: type picker modal */}
+      {reportingStep.kind === 'pickingType' && (
         <ReportModal
-          lat={reportClickPos.lat}
-          lng={reportClickPos.lng}
+          lat={reportingStep.lat}
+          lng={reportingStep.lng}
           onSubmit={handleReportSubmit}
-          onCancel={() => setReportClickPos(null)}
+          onCancel={handleReportCancel}
         />
       )}
 

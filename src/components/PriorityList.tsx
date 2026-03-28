@@ -58,7 +58,7 @@ export default function PriorityList({ reports, likedIds, onLike, onLocate, onCl
                 <path d="M20 12v10M20 28v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
               </svg>
               <p className="text-sm">No reports yet</p>
-              <p className="text-xs mt-1">Tap anywhere on the map to report an issue</p>
+              <p className="text-xs mt-1">Tap the report button to submit an issue</p>
             </div>
           ) : (
             <ul className="divide-y divide-gray-100">
