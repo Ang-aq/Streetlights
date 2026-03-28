@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo, useRef } from 'react';
+import { useState, useCallback, useMemo, useRef, useEffect } from 'react';
 import type { Map as LeafletMap } from 'leaflet';
 import { projects } from './data';
 import type { CIPProject, ProjectCategory } from './types/project';
@@ -18,6 +18,18 @@ export interface SearchLocation {
   displayName: string;
 }
 
+function useIsDesktop() {
+  const [isDesktop, setIsDesktop] = useState(() => window.innerWidth >= 768);
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 768px)');
+    setIsDesktop(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+  return isDesktop;
+}
+
 const RADIUS_OPTIONS = [0.25, 0.5, 1, 2, 5] as const;
 const DEFAULT_RADIUS = 1;
 
@@ -33,6 +45,7 @@ export default function App() {
   const [selectedProject, setSelectedProject] = useState<CIPProject | null>(null);
   const [activeCategories, setActiveCategories] = useState<Set<ProjectCategory>>(new Set());
   const [sheetSnap, setSheetSnap] = useState<'peek' | 'full'>('peek');
+  const isDesktop = useIsDesktop();
 
   // Reporting state
   const { reports, priorityReports, likedIds, addReport, likeReport } = useReports();
@@ -141,61 +154,46 @@ export default function App() {
         nearbyCount={searchLocation ? nearbyProjects.length : null}
       />
 
-      {/* Content area — map fills full space, sheet overlays from bottom */}
-      <div className="flex-1 relative overflow-hidden">
-
-        {/* Map — always full size */}
-        <div className="absolute inset-0">
-          <MapView
-            projects={displayProjects}
-            searchLocation={searchLocation}
-            onProjectSelect={handleProjectSelect}
-            mapRef={mapRef}
-            reports={reports}
-            likedIds={likedIds}
-            onMapClick={handleMapClick}
-            onReportLike={likeReport}
-            onOpenPriorityList={() => setShowPriorityList(true)}
-            bottomPad={MAP_BOTTOM_PAD}
-          />
-        </div>
-
-        {/* Bottom sheet — slides up from bottom */}
-        <div
-          className="absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-2xl z-[400] flex flex-col"
-          style={{
-            height: sheetSnap === 'full' ? '65vh' : PEEK_HEIGHT,
-            transition: 'height 250ms ease',
-          }}
-        >
-          {/* Handle bar — tap to toggle peek ↔ full */}
-          <div
-            className="flex-none flex items-center justify-between px-4 py-2.5 cursor-pointer select-none border-b border-gray-100"
-            onClick={() => setSheetSnap(v => v === 'full' ? 'peek' : 'full')}
-          >
-            <div className="flex items-center gap-2.5 min-w-0">
-              <div className="w-8 h-1 rounded-full bg-gray-300 flex-none" />
-              <span className="text-xs font-medium text-gray-500 truncate">
-                {sheetLabel}
-              </span>
-            </div>
-            {/* Chevron — points up when full, down when peek */}
-            <svg
-              width="14" height="14" viewBox="0 0 14 14" fill="none"
-              className={`flex-none text-gray-400 transition-transform duration-200 ${sheetSnap === 'full' ? 'rotate-180' : ''}`}
-            >
-              <path d="M2 5l5 4 5-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
+      {/* Content area — responsive layout */}
+      {isDesktop ? (
+        /* Desktop: map + side panel side by side */
+        <div className="flex flex-row flex-1 overflow-hidden">
+          {/* Map fills remaining width */}
+          <div className="flex-1 relative">
+            <MapView
+              projects={displayProjects}
+              searchLocation={searchLocation}
+              onProjectSelect={handleProjectSelect}
+              mapRef={mapRef}
+              reports={reports}
+              likedIds={likedIds}
+              onMapClick={handleMapClick}
+              onReportLike={likeReport}
+              onOpenPriorityList={() => setShowPriorityList(true)}
+              bottomPad={24}
+            />
           </div>
 
-          {/* Sheet content — scrollable */}
-          <div className="flex-1 overflow-y-auto">
+          {/* Side panel */}
+          <div className="flex-none w-80 h-full border-l border-gray-200 bg-white flex flex-col overflow-hidden">
             {selectedProject ? (
-              <ProjectDetail
-                project={selectedProject}
-                onClose={handleCloseDetail}
-                inline
-              />
+              <>
+                <div className="flex-none flex items-center justify-between px-4 py-3 border-b border-gray-100">
+                  <span className="text-sm font-semibold text-slate-700">Project detail</span>
+                  <button
+                    onClick={handleCloseDetail}
+                    className="text-gray-400 hover:text-gray-600 transition-colors"
+                    aria-label="Close detail"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M3 3l10 10M13 3L3 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                    </svg>
+                  </button>
+                </div>
+                <div className="flex-1 overflow-y-auto">
+                  <ProjectDetail project={selectedProject} onClose={handleCloseDetail} inline />
+                </div>
+              </>
             ) : (
               <ProjectList
                 projects={displayProjects}
@@ -206,7 +204,74 @@ export default function App() {
             )}
           </div>
         </div>
-      </div>
+      ) : (
+        /* Mobile: map full size, bottom sheet overlay */
+        <div className="flex-1 relative overflow-hidden">
+
+          {/* Map — always full size */}
+          <div className="absolute inset-0">
+            <MapView
+              projects={displayProjects}
+              searchLocation={searchLocation}
+              onProjectSelect={handleProjectSelect}
+              mapRef={mapRef}
+              reports={reports}
+              likedIds={likedIds}
+              onMapClick={handleMapClick}
+              onReportLike={likeReport}
+              onOpenPriorityList={() => setShowPriorityList(true)}
+              bottomPad={MAP_BOTTOM_PAD}
+            />
+          </div>
+
+          {/* Bottom sheet — slides up from bottom */}
+          <div
+            className="absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-2xl z-[400] flex flex-col"
+            style={{
+              height: sheetSnap === 'full' ? '65vh' : PEEK_HEIGHT,
+              transition: 'height 250ms ease',
+            }}
+          >
+            {/* Handle bar — tap to toggle peek ↔ full */}
+            <div
+              className="flex-none flex items-center justify-between px-4 py-2.5 cursor-pointer select-none border-b border-gray-100"
+              onClick={() => setSheetSnap(v => v === 'full' ? 'peek' : 'full')}
+            >
+              <div className="flex items-center gap-2.5 min-w-0">
+                <div className="w-8 h-1 rounded-full bg-gray-300 flex-none" />
+                <span className="text-xs font-medium text-gray-500 truncate">
+                  {sheetLabel}
+                </span>
+              </div>
+              {/* Chevron — points up when full, down when peek */}
+              <svg
+                width="14" height="14" viewBox="0 0 14 14" fill="none"
+                className={`flex-none text-gray-400 transition-transform duration-200 ${sheetSnap === 'full' ? 'rotate-180' : ''}`}
+              >
+                <path d="M2 5l5 4 5-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+
+            {/* Sheet content — scrollable */}
+            <div className="flex-1 overflow-y-auto">
+              {selectedProject ? (
+                <ProjectDetail
+                  project={selectedProject}
+                  onClose={handleCloseDetail}
+                  inline
+                />
+              ) : (
+                <ProjectList
+                  projects={displayProjects}
+                  selectedProject={null}
+                  searchActive={!!searchLocation}
+                  onSelect={handleProjectSelect}
+                />
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Report modal */}
       {reportClickPos && (
