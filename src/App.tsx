@@ -165,6 +165,24 @@ export default function App() {
         onShowInfo={setShowInfo}
       />
 
+      {/* Mobile-only controls bar: Reports + Phase Key, pinned below TopBar */}
+      {!isDesktop && (
+        <div className="flex-none flex items-center justify-end gap-2 px-3 py-1.5 bg-white border-b border-gray-100">
+          <button
+            onClick={() => setShowPriorityList(true)}
+            title="View community reports"
+            className="p-2 bg-amber-500 hover:bg-amber-400 text-white rounded-full shadow active:scale-95 transition-all"
+          >
+            <svg width="16" height="14" viewBox="0 0 20 18" fill="none" aria-hidden="true">
+              <path d="M10 2L2 17h16L10 2z" stroke="white" strokeWidth="1.8" strokeLinejoin="round" fill="none" />
+              <path d="M10 8v4" stroke="white" strokeWidth="2" strokeLinecap="round" />
+              <circle cx="10" cy="14.5" r="1.1" fill="white" />
+            </svg>
+          </button>
+          <MapLegend dropdown />
+        </div>
+      )}
+
       {/* Content area — responsive layout */}
       {isDesktop ? (
         /* Desktop: map + side panel side by side */
@@ -264,24 +282,6 @@ export default function App() {
                 <path d="M2 5l5 4 5-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-
-            {/* Action row — MapLegend + circular Reports FAB, above the list */}
-            {!selectedProject && (
-              <div className="flex-none flex items-center gap-2 px-3 py-2 border-b border-gray-100">
-                <MapLegend />
-                <button
-                  onClick={() => setShowPriorityList(true)}
-                  title="View community reports"
-                  className="flex-none p-2.5 bg-amber-500 hover:bg-amber-400 text-white rounded-full shadow active:scale-95 transition-all"
-                >
-                  <svg width="16" height="14" viewBox="0 0 20 18" fill="none" aria-hidden="true">
-                    <path d="M10 2L2 17h16L10 2z" stroke="white" strokeWidth="1.8" strokeLinejoin="round" fill="none" />
-                    <path d="M10 8v4" stroke="white" strokeWidth="2" strokeLinecap="round" />
-                    <circle cx="10" cy="14.5" r="1.1" fill="white" />
-                  </svg>
-                </button>
-              </div>
-            )}
 
             {/* Sheet content — scrollable project list or detail */}
             <div

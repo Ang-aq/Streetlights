@@ -4,25 +4,17 @@ import { createPinSvgString } from '../utils/markerColors';
 
 const PHASES: ProjectPhase[] = ['Planning', 'Design', 'Construction', 'Complete', 'On Hold'];
 
-export default function MapLegend() {
+interface MapLegendProps {
+  /** When true, the expanded panel opens as an absolute dropdown below the button
+   *  instead of replacing the button in-place. Use for toolbar contexts. */
+  dropdown?: boolean;
+}
+
+export default function MapLegend({ dropdown = false }: MapLegendProps) {
   const [open, setOpen] = useState(false);
 
-  if (!open) {
-    return (
-      <button
-        onClick={() => setOpen(true)}
-        className="pointer-events-auto bg-white bg-opacity-90 rounded-full shadow px-2.5 py-1 text-xs text-gray-600 font-medium flex items-center gap-1.5 hover:bg-opacity-100 transition"
-      >
-        <span style={{ width: 10, height: 13, display: 'inline-block' }}
-          dangerouslySetInnerHTML={{ __html: createPinSvgString('Planning', 10, 13) }}
-        />
-        Phase key
-      </button>
-    );
-  }
-
-  return (
-    <div className="pointer-events-auto bg-white bg-opacity-90 rounded-xl shadow-lg px-3 py-2 text-xs leading-snug">
+  const phaseList = (
+    <>
       <div className="flex items-center justify-between mb-1.5">
         <p className="font-semibold text-gray-700">Phase</p>
         <button
@@ -43,6 +35,55 @@ export default function MapLegend() {
           <span className="text-gray-600">{phase}</span>
         </div>
       ))}
+    </>
+  );
+
+  const triggerBtn = (
+    <button
+      onClick={() => setOpen(v => !v)}
+      className="pointer-events-auto bg-white bg-opacity-90 rounded-full shadow px-2.5 py-1 text-xs text-gray-600 font-medium flex items-center gap-1.5 hover:bg-opacity-100 transition"
+    >
+      <span
+        style={{ width: 10, height: 13, display: 'inline-block' }}
+        dangerouslySetInnerHTML={{ __html: createPinSvgString('Planning', 10, 13) }}
+      />
+      Phase key
+    </button>
+  );
+
+  // ── Dropdown mode (toolbar): button stays, panel floats below ─────────────
+  if (dropdown) {
+    return (
+      <div className="relative">
+        {triggerBtn}
+        {open && (
+          <div className="absolute top-full right-0 mt-1.5 z-[600] pointer-events-auto bg-white rounded-xl shadow-lg px-3 py-2 text-xs leading-snug min-w-[130px]">
+            {phaseList}
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // ── In-place mode (map overlay): component swaps between button and panel ──
+  if (!open) {
+    return (
+      <button
+        onClick={() => setOpen(true)}
+        className="pointer-events-auto bg-white bg-opacity-90 rounded-full shadow px-2.5 py-1 text-xs text-gray-600 font-medium flex items-center gap-1.5 hover:bg-opacity-100 transition"
+      >
+        <span
+          style={{ width: 10, height: 13, display: 'inline-block' }}
+          dangerouslySetInnerHTML={{ __html: createPinSvgString('Planning', 10, 13) }}
+        />
+        Phase key
+      </button>
+    );
+  }
+
+  return (
+    <div className="pointer-events-auto bg-white bg-opacity-90 rounded-xl shadow-lg px-3 py-2 text-xs leading-snug">
+      {phaseList}
     </div>
   );
 }
