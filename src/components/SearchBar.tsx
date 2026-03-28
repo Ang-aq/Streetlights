@@ -4,9 +4,9 @@ import type { SearchLocation } from '../App';
 import { useNominatim } from '../hooks/useNominatim';
 
 const SAMPLE_ADDRESSES = [
-  '2501 Hermitage Rd',
-  '900 E Broad St',
-  '1 Arthur Ashe Blvd',
+  '25 W Main St',
+  '2501 Monument Ave',
+  'Hull Street',
 ];
 
 interface Props {

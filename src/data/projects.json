@@ -9,10 +9,13 @@
     "totalBudget": 2057000,
     "spentToDate": 0,
     "estimatedCompletion": "Fall 2031",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $2.1M, expected to wrap up Fall 2031."
+    "lat": 37.53219711516197,
+    "lng": -77.43521360391516,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $2.1M, expected to wrap up Fall 2031.",
+    "manager": "Winston Phillips",
+    "email": "Winston.Phillips@rva.gov",
+    "phone": "804-646-5994"
   },
   {
     "id": "CIP-3",
@@ -24,10 +27,13 @@
     "totalBudget": 1612000,
     "spentToDate": 0,
     "estimatedCompletion": "Fall 2027",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $1.6M, expected to wrap up Fall 2027."
+    "lat": 37.55522170837067,
+    "lng": -77.46921058093277,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $1.6M, expected to wrap up Fall 2027.",
+    "manager": "Adel Edward",
+    "email": "Adel.Edward@rva.gov",
+    "phone": "804-646-6584"
   },
   {
     "id": "CIP-6",
@@ -39,10 +45,13 @@
     "totalBudget": 4900000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $4.9M."
+    "lat": 37.5336304699017,
+    "lng": -77.42998572706043,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $4.9M.",
+    "manager": "Jerry Allen",
+    "email": "Jerry.Allen@rva.gov",
+    "phone": "804-646-7276"
   },
   {
     "id": "CIP-9",
@@ -54,10 +63,13 @@
     "totalBudget": 800000,
     "spentToDate": 0,
     "estimatedCompletion": "N/A",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently complete with a total budget of $800K."
+    "lat": 37.53398817048608,
+    "lng": -77.48797694770704,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently complete with a total budget of $800K.",
+    "manager": "Olayinka Bruce",
+    "email": "Olayinka.Bruce@rva.gov",
+    "phone": "804-646-2312"
   },
   {
     "id": "CIP-14",
@@ -69,10 +81,13 @@
     "totalBudget": 23900000,
     "spentToDate": 0,
     "estimatedCompletion": "Winter 2025",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This utilities project is currently in design with a total budget of $23.9M, expected to wrap up Winter 2025."
+    "lat": 37.531654252540385,
+    "lng": -77.43380588756796,
+    "geocodeFallback": false,
+    "plainSummary": "This utilities project is currently in design with a total budget of $23.9M, expected to wrap up Winter 2025.",
+    "manager": "William Boston",
+    "email": "William.Boston2@rva.gov",
+    "phone": "804-646-8161"
   },
   {
     "id": "CIP-24",
@@ -84,10 +99,13 @@
     "totalBudget": 550000,
     "spentToDate": 0,
     "estimatedCompletion": "Spring 2025",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently complete with a total budget of $550K, expected to wrap up Spring 2025."
+    "lat": 37.52838924334847,
+    "lng": -77.46203233919586,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently complete with a total budget of $550K, expected to wrap up Spring 2025.",
+    "manager": "Adel Edward",
+    "email": "Adel.Edward@rva.gov",
+    "phone": "804-646-6584"
   },
   {
     "id": "CIP-25",
@@ -99,10 +117,13 @@
     "totalBudget": 8944513,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This utilities project is currently in design with a total budget of $8.9M."
+    "lat": 37.53378154955644,
+    "lng": -77.41987102197166,
+    "geocodeFallback": false,
+    "plainSummary": "This utilities project is currently in design with a total budget of $8.9M.",
+    "manager": "Rhonda Johnson",
+    "email": "Rhonda.Johnson@rva.gov",
+    "phone": "804-646-5463"
   },
   {
     "id": "CIP-26",
@@ -114,10 +135,13 @@
     "totalBudget": 24963523,
     "spentToDate": 0,
     "estimatedCompletion": "Spring 2026",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $25.0M, expected to wrap up Spring 2026."
+    "lat": 37.49573066186069,
+    "lng": -77.4487431497687,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $25.0M, expected to wrap up Spring 2026.",
+    "manager": "Thomas Westbrook",
+    "email": "Thomas.Westbrook@rva.gov",
+    "phone": "804-646-3421"
   },
   {
     "id": "CIP-27",
@@ -129,10 +153,13 @@
     "totalBudget": 18865391,
     "spentToDate": 0,
     "estimatedCompletion": "2031",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $18.9M, expected to wrap up 2031."
+    "lat": 37.50870534105982,
+    "lng": -77.45102597982616,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $18.9M, expected to wrap up 2031.",
+    "manager": "Winston Phillips",
+    "email": "Winston.Phillips@rva.gov",
+    "phone": "804-646-5994"
   },
   {
     "id": "CIP-29",
@@ -144,10 +171,13 @@
     "totalBudget": 37500000,
     "spentToDate": 0,
     "estimatedCompletion": "Summer 2027",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $37.5M, expected to wrap up Summer 2027."
+    "lat": 37.51094156584006,
+    "lng": -77.45119744829557,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $37.5M, expected to wrap up Summer 2027.",
+    "manager": "Adel Edward",
+    "email": "Adel.Edward@rva.gov",
+    "phone": "804-646-6584"
   },
   {
     "id": "CIP-32",
@@ -159,10 +189,13 @@
     "totalBudget": 30513000,
     "spentToDate": 0,
     "estimatedCompletion": "Spring 2025",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This facilities project is currently complete with a total budget of $30.5M, expected to wrap up Spring 2025."
+    "lat": 37.50397521408045,
+    "lng": -77.4732577909147,
+    "geocodeFallback": false,
+    "plainSummary": "This facilities project is currently complete with a total budget of $30.5M, expected to wrap up Spring 2025.",
+    "manager": "Heywood Harrison",
+    "email": "Heywood.Harrison@rva.gov",
+    "phone": "804-646-5608"
   },
   {
     "id": "CIP-33",
@@ -174,10 +207,13 @@
     "totalBudget": 12700000,
     "spentToDate": 0,
     "estimatedCompletion": "December 2026",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $12.7M, expected to wrap up December 2026."
+    "lat": 37.526401564856606,
+    "lng": -77.4790357819954,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $12.7M, expected to wrap up December 2026.",
+    "manager": "Adel Edward",
+    "email": "Adel.Edward@rva.gov",
+    "phone": "804-646-6584"
   },
   {
     "id": "CIP-34",
@@ -189,10 +225,13 @@
     "totalBudget": 36488000,
     "spentToDate": 0,
     "estimatedCompletion": "Summer 2028",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $36.5M, expected to wrap up Summer 2028."
+    "lat": 37.49933930865239,
+    "lng": -77.49929235829913,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $36.5M, expected to wrap up Summer 2028.",
+    "manager": "Winston Phillips",
+    "email": "Winston.Phillips@rva.gov",
+    "phone": "804-646-5994"
   },
   {
     "id": "CIP-35",
@@ -204,10 +243,13 @@
     "totalBudget": 1050000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently on hold with a total budget of $1.1M."
+    "lat": 37.48109245356601,
+    "lng": -77.48507240601926,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently on hold with a total budget of $1.1M.",
+    "manager": "Afshin Famili",
+    "email": "Afshin.Famili@rva.gov",
+    "phone": "804-646-6334"
   },
   {
     "id": "CIP-36",
@@ -219,10 +261,13 @@
     "totalBudget": 780000,
     "spentToDate": 0,
     "estimatedCompletion": "Summer 2025",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $780K, expected to wrap up Summer 2025."
+    "lat": 37.527681074172456,
+    "lng": -77.4615122567583,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $780K, expected to wrap up Summer 2025.",
+    "manager": "Adel Edward",
+    "email": "Adel.Edward@rva.gov",
+    "phone": "804-646-6584"
   },
   {
     "id": "CIP-37",
@@ -234,10 +279,13 @@
     "totalBudget": 3966000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $4.0M."
+    "lat": 37.54176286243871,
+    "lng": -77.43983537488069,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $4.0M.",
+    "manager": "John Kim",
+    "email": "John.Kim@rva.gov",
+    "phone": "804-646-5684"
   },
   {
     "id": "CIP-38",
@@ -249,10 +297,13 @@
     "totalBudget": 50000000,
     "spentToDate": 0,
     "estimatedCompletion": "Summer 2029",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $50.0M, expected to wrap up Summer 2029."
+    "lat": 37.532796836841094,
+    "lng": -77.42790941491903,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $50.0M, expected to wrap up Summer 2029.",
+    "manager": "Adel Edward",
+    "email": "Adel.Edward@rva.gov",
+    "phone": "804-646-6584"
   },
   {
     "id": "CIP-40",
@@ -264,10 +315,13 @@
     "totalBudget": 6608000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $6.6M."
+    "lat": 37.54659726283582,
+    "lng": -77.44060210680935,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $6.6M.",
+    "manager": "Yongping Wang",
+    "email": "Yongping.Wang@rva.gov",
+    "phone": "804-646-2467"
   },
   {
     "id": "CIP-45",
@@ -279,10 +333,13 @@
     "totalBudget": 15702000,
     "spentToDate": 0,
     "estimatedCompletion": "Late 2028",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $15.7M, expected to wrap up Late 2028."
+    "lat": 37.47713863244501,
+    "lng": -77.5046506058463,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $15.7M, expected to wrap up Late 2028.",
+    "manager": "Mohamed Benomar",
+    "email": "Mohamed.Benomar@rva.gov",
+    "phone": "804-987-7545"
   },
   {
     "id": "CIP-46",
@@ -294,10 +351,13 @@
     "totalBudget": 9500000,
     "spentToDate": 0,
     "estimatedCompletion": "December 2027",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $9.5M, expected to wrap up December 2027."
+    "lat": 37.51883051123407,
+    "lng": -77.42980319071019,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $9.5M, expected to wrap up December 2027.",
+    "manager": "Adel Edward",
+    "email": "Adel.Edward@rva.gov",
+    "phone": "804-646-6584"
   },
   {
     "id": "CIP-47",
@@ -309,10 +369,13 @@
     "totalBudget": 4618000,
     "spentToDate": 0,
     "estimatedCompletion": "Fall 2030",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $4.6M, expected to wrap up Fall 2030."
+    "lat": 37.52510776704171,
+    "lng": -77.44380339040923,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $4.6M, expected to wrap up Fall 2030.",
+    "manager": "Olayinka Bruce",
+    "email": "Olayinka.Bruce@rva.gov",
+    "phone": "804-646-2312"
   },
   {
     "id": "CIP-48",
@@ -324,10 +387,13 @@
     "totalBudget": 5500000,
     "spentToDate": 0,
     "estimatedCompletion": "Summer 2027",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $5.5M, expected to wrap up Summer 2027."
+    "lat": 37.525920820275665,
+    "lng": -77.44179423023108,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $5.5M, expected to wrap up Summer 2027.",
+    "manager": "Winston Phillips",
+    "email": "Winston.Phillips@rva.gov",
+    "phone": "804-646-5994"
   },
   {
     "id": "CIP-49",
@@ -339,10 +405,13 @@
     "totalBudget": 13242000,
     "spentToDate": 0,
     "estimatedCompletion": "Summer 2028",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $13.2M, expected to wrap up Summer 2028."
+    "lat": 37.480522968960194,
+    "lng": -77.48443596256561,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $13.2M, expected to wrap up Summer 2028.",
+    "manager": "Winston Phillips",
+    "email": "Winston.Phillips@rva.gov",
+    "phone": "804-646-6339"
   },
   {
     "id": "CIP-50",
@@ -354,10 +423,13 @@
     "totalBudget": 15325000,
     "spentToDate": 0,
     "estimatedCompletion": "Fall 2026",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $15.3M, expected to wrap up Fall 2026."
+    "lat": 37.48000256584127,
+    "lng": -77.48585400711508,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $15.3M, expected to wrap up Fall 2026.",
+    "manager": "Winston Phillips",
+    "email": "Winston.Phillips@rva.gov",
+    "phone": "804-646-5994"
   },
   {
     "id": "CIP-51",
@@ -369,10 +441,13 @@
     "totalBudget": 10775000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $10.8M."
+    "lat": 37.5201976077137,
+    "lng": -77.44506840819452,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $10.8M.",
+    "manager": "Thomas Westbrook",
+    "email": "Thomas.Westbrook@rva.gov",
+    "phone": "804-646-3421"
   },
   {
     "id": "CIP-52",
@@ -384,10 +459,13 @@
     "totalBudget": 13613000,
     "spentToDate": 0,
     "estimatedCompletion": "Fall 2029",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $13.6M, expected to wrap up Fall 2029."
+    "lat": 37.549363720561914,
+    "lng": -77.46099793112151,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $13.6M, expected to wrap up Fall 2029.",
+    "manager": "Thomas Westbrook",
+    "email": "Thomas.Westbrook@rva.gov",
+    "phone": "804-646-3421"
   },
   {
     "id": "CIP-53",
@@ -399,10 +477,13 @@
     "totalBudget": 90000000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $90.0M."
+    "lat": 37.52734986942514,
+    "lng": -77.44281071160559,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $90.0M.",
+    "manager": "Thomas Westbrook",
+    "email": "Thomas.Westbrook@rva.gov",
+    "phone": "804-646-3421"
   },
   {
     "id": "CIP-54",
@@ -414,10 +495,13 @@
     "totalBudget": 801600,
     "spentToDate": 0,
     "estimatedCompletion": "Summer 2026",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $802K, expected to wrap up Summer 2026."
+    "lat": 37.528518624356956,
+    "lng": -77.46123703562891,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $802K, expected to wrap up Summer 2026.",
+    "manager": "Winston Phillips",
+    "email": "Winston.Phillips@rva.gov",
+    "phone": "804-646-6584"
   },
   {
     "id": "CIP-58",
@@ -429,10 +513,13 @@
     "totalBudget": 1624600,
     "spentToDate": 0,
     "estimatedCompletion": "Winter 2026",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $1.6M, expected to wrap up Winter 2026."
+    "lat": 37.503753738764864,
+    "lng": -77.46260229779365,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $1.6M, expected to wrap up Winter 2026.",
+    "manager": "Yongping Wang",
+    "email": "Yongping.Wang@rva.gov",
+    "phone": "804-646-2467"
   },
   {
     "id": "CIP-61",
@@ -444,10 +531,13 @@
     "totalBudget": 4399000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $4.4M."
+    "lat": 37.54278275851961,
+    "lng": -77.43911332542002,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $4.4M.",
+    "manager": "Yongping Wang",
+    "email": "Yongping.Wang@rva.gov",
+    "phone": "804-646-2467"
   },
   {
     "id": "CIP-62",
@@ -459,10 +549,13 @@
     "totalBudget": 1075000,
     "spentToDate": 0,
     "estimatedCompletion": "N/A",
-    "lat": 37.5407,
-    "lng": -77.436,
+    "lat": 37.54444613245437,
+    "lng": -77.4342480705749,
     "geocodeFallback": true,
-    "plainSummary": "This facilities project is currently complete with a total budget of $1.1M."
+    "plainSummary": "This facilities project is currently complete with a total budget of $1.1M.",
+    "manager": "Heywood Harrison",
+    "email": "Heywood.Harrison@rva.gov",
+    "phone": "804-646-5608"
   },
   {
     "id": "CIP-63",
@@ -474,10 +567,13 @@
     "totalBudget": 3987284,
     "spentToDate": 0,
     "estimatedCompletion": "Fall 2026",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $4.0M, expected to wrap up Fall 2026."
+    "lat": 37.53612889157853,
+    "lng": -77.40931262439602,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $4.0M, expected to wrap up Fall 2026.",
+    "manager": "Winston Phillips",
+    "email": "Winston.Phillips@rva.gov",
+    "phone": "804-646-5994"
   },
   {
     "id": "CIP-64",
@@ -489,10 +585,13 @@
     "totalBudget": 3309000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $3.3M."
+    "lat": 37.54249160332797,
+    "lng": -77.43984943419663,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $3.3M.",
+    "manager": "Yongping Wang",
+    "email": "Yongping.Wang@rva.gov",
+    "phone": "804-646-2467"
   },
   {
     "id": "CIP-65",
@@ -504,10 +603,13 @@
     "totalBudget": 71390438,
     "spentToDate": 0,
     "estimatedCompletion": "Fall 2028",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This utilities project is currently under construction with a total budget of $71.4M, expected to wrap up Fall 2028."
+    "lat": 37.53820374644717,
+    "lng": -77.49004829760135,
+    "geocodeFallback": false,
+    "plainSummary": "This utilities project is currently under construction with a total budget of $71.4M, expected to wrap up Fall 2028.",
+    "manager": "Ricky Hatfield",
+    "email": "Ricky.Hatfield@rva.gov",
+    "phone": "804-646-1933"
   },
   {
     "id": "CIP-93",
@@ -519,10 +621,13 @@
     "totalBudget": 1037279,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $1.0M."
+    "lat": 37.56215614282331,
+    "lng": -77.4759241658712,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $1.0M.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-102",
@@ -534,10 +639,13 @@
     "totalBudget": 33900966,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This facilities project is currently in design with a total budget of $33.9M."
+    "lat": 37.53422796815123,
+    "lng": -77.42896867226578,
+    "geocodeFallback": false,
+    "plainSummary": "This facilities project is currently in design with a total budget of $33.9M.",
+    "manager": "Jeannie Welliver/Martin West",
+    "email": "Jeannie.Welliver@rva.gov",
+    "phone": "804-646-7322"
   },
   {
     "id": "CIP-103",
@@ -549,10 +657,13 @@
     "totalBudget": 2992000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $3.0M."
+    "lat": 37.54028849480718,
+    "lng": -77.46097461633164,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $3.0M.",
+    "manager": "Yongping Wang",
+    "email": "Yongping.Wang@rva.gov",
+    "phone": "804-646-2467"
   },
   {
     "id": "CIP-104",
@@ -564,10 +675,13 @@
     "totalBudget": 30000,
     "spentToDate": 0,
     "estimatedCompletion": "Summer 2024",
-    "lat": 37.5407,
-    "lng": -77.436,
+    "lat": 37.54206126647969,
+    "lng": -77.43122749012277,
     "geocodeFallback": true,
-    "plainSummary": "This facilities project is currently under construction with a total budget of $30K, expected to wrap up Summer 2024."
+    "plainSummary": "This facilities project is currently under construction with a total budget of $30K, expected to wrap up Summer 2024.",
+    "manager": "Monica Kinsey",
+    "email": "Monica.Kinsey@rva.gov",
+    "phone": "804-646-3303"
   },
   {
     "id": "CIP-106",
@@ -579,10 +693,13 @@
     "totalBudget": 30000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
+    "lat": 37.54374542730101,
+    "lng": -77.43589031349737,
     "geocodeFallback": true,
-    "plainSummary": "This facilities project is currently under construction with a total budget of $30K."
+    "plainSummary": "This facilities project is currently under construction with a total budget of $30K.",
+    "manager": "Monica Kinsey",
+    "email": "Monica.Kinsey@rva.gov",
+    "phone": "804-646-3303"
   },
   {
     "id": "CIP-107",
@@ -594,10 +711,13 @@
     "totalBudget": 170000,
     "spentToDate": 0,
     "estimatedCompletion": "N/A",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This facilities project is currently complete with a total budget of $170K."
+    "lat": 37.54512547618693,
+    "lng": -77.4482790154182,
+    "geocodeFallback": false,
+    "plainSummary": "This facilities project is currently complete with a total budget of $170K.",
+    "manager": "Monica Kinsey",
+    "email": "Monica.Kinsey@rva.gov",
+    "phone": "804-646-3303"
   },
   {
     "id": "CIP-108",
@@ -609,10 +729,13 @@
     "totalBudget": 69000,
     "spentToDate": 0,
     "estimatedCompletion": "Fall 2025",
-    "lat": 37.5407,
-    "lng": -77.436,
+    "lat": 37.53607872617068,
+    "lng": -77.43812528706697,
     "geocodeFallback": true,
-    "plainSummary": "This facilities project is currently under construction with a total budget of $69K, expected to wrap up Fall 2025."
+    "plainSummary": "This facilities project is currently under construction with a total budget of $69K, expected to wrap up Fall 2025.",
+    "manager": "Monica Kinsey",
+    "email": "Monica.Kinsey@rva.gov",
+    "phone": "804-646-3303"
   },
   {
     "id": "CIP-109",
@@ -624,10 +747,13 @@
     "totalBudget": 179000,
     "spentToDate": 0,
     "estimatedCompletion": "N/A",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This facilities project is currently complete with a total budget of $179K."
+    "lat": 37.50592224343669,
+    "lng": -77.47382509908262,
+    "geocodeFallback": false,
+    "plainSummary": "This facilities project is currently complete with a total budget of $179K.",
+    "manager": "Monica Kinsey",
+    "email": "Monica.Kinsey@rva.gov",
+    "phone": "804-646-3303"
   },
   {
     "id": "CIP-110",
@@ -639,10 +765,13 @@
     "totalBudget": 200000,
     "spentToDate": 0,
     "estimatedCompletion": "Fall 2026",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This facilities project is currently in design with a total budget of $200K, expected to wrap up Fall 2026."
+    "lat": 37.50508152643845,
+    "lng": -77.47310240681824,
+    "geocodeFallback": false,
+    "plainSummary": "This facilities project is currently in design with a total budget of $200K, expected to wrap up Fall 2026.",
+    "manager": "Monica Kinsey",
+    "email": "Monica.Kinsey@rva.gov",
+    "phone": "804-646-3303"
   },
   {
     "id": "CIP-111",
@@ -654,10 +783,13 @@
     "totalBudget": 17039000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This utilities project is currently in design with a total budget of $17.0M."
+    "lat": 37.53734483564383,
+    "lng": -77.40864274604341,
+    "geocodeFallback": false,
+    "plainSummary": "This utilities project is currently in design with a total budget of $17.0M.",
+    "manager": "Robert Stone",
+    "email": "Robert.Stone@rva.gov",
+    "phone": "804-646-8557"
   },
   {
     "id": "CIP-112",
@@ -669,10 +801,13 @@
     "totalBudget": 20000000,
     "spentToDate": 0,
     "estimatedCompletion": "N/A",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This facilities project is currently complete with a total budget of $20.0M."
+    "lat": 37.50402033946222,
+    "lng": -77.46322666955822,
+    "geocodeFallback": false,
+    "plainSummary": "This facilities project is currently complete with a total budget of $20.0M.",
+    "manager": "Lynne Lancaster",
+    "email": "Lynne.Lancaster@rva.gov",
+    "phone": "804-646-6006"
   },
   {
     "id": "CIP-114",
@@ -684,10 +819,13 @@
     "totalBudget": 35000000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $35.0M."
+    "lat": 37.55330513000282,
+    "lng": -77.47127684286107,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $35.0M.",
+    "manager": "Yongping Wang",
+    "email": "Yongping.Wang@rva.gov",
+    "phone": "804-646-2467"
   },
   {
     "id": "CIP-115",
@@ -699,10 +837,13 @@
     "totalBudget": 503000,
     "spentToDate": 0,
     "estimatedCompletion": "Spring 2026",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $503K, expected to wrap up Spring 2026."
+    "lat": 37.54470124293739,
+    "lng": -77.4502344473208,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $503K, expected to wrap up Spring 2026.",
+    "manager": "Afshin Famili",
+    "email": "Afshin.Famili@rva.gov",
+    "phone": "804-646-6334"
   },
   {
     "id": "CIP-116",
@@ -714,10 +855,13 @@
     "totalBudget": 12441000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $12.4M."
+    "lat": 37.497129547215295,
+    "lng": -77.44767106911513,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $12.4M.",
+    "manager": "Thomas Westbrook",
+    "email": "Thomas.Westbrook@rva.gov",
+    "phone": "804-646-3421"
   },
   {
     "id": "CIP-118",
@@ -729,10 +873,13 @@
     "totalBudget": 16392743,
     "spentToDate": 0,
     "estimatedCompletion": "N/A",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This facilities project is currently complete with a total budget of $16.4M."
+    "lat": 37.480592718413426,
+    "lng": -77.48474000964593,
+    "geocodeFallback": false,
+    "plainSummary": "This facilities project is currently complete with a total budget of $16.4M.",
+    "manager": "Dexter Goode",
+    "email": "Louis.Goode@rva.gov",
+    "phone": "804-646-7531"
   },
   {
     "id": "CIP-119",
@@ -744,10 +891,13 @@
     "totalBudget": 17740573,
     "spentToDate": 0,
     "estimatedCompletion": "Winter 2025",
-    "lat": 37.5407,
-    "lng": -77.436,
+    "lat": 37.5375094778569,
+    "lng": -77.437954026271,
     "geocodeFallback": true,
-    "plainSummary": "This facilities project is currently under construction with a total budget of $17.7M, expected to wrap up Winter 2025."
+    "plainSummary": "This facilities project is currently under construction with a total budget of $17.7M, expected to wrap up Winter 2025.",
+    "manager": "Lynne Lancaster",
+    "email": "Lynne.Lancaster@rva.gov",
+    "phone": "804-646-6006"
   },
   {
     "id": "CIP-120",
@@ -759,10 +909,13 @@
     "totalBudget": 554711,
     "spentToDate": 0,
     "estimatedCompletion": "Spring 2026",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $555K, expected to wrap up Spring 2026."
+    "lat": 37.50291711613562,
+    "lng": -77.46128333455613,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $555K, expected to wrap up Spring 2026.",
+    "manager": "Afshin Famili",
+    "email": "Afshin.Famili@rva.gov",
+    "phone": "804-646-6334"
   },
   {
     "id": "CIP-121",
@@ -774,10 +927,13 @@
     "totalBudget": 26000000,
     "spentToDate": 0,
     "estimatedCompletion": "Summer 2029",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $26.0M, expected to wrap up Summer 2029."
+    "lat": 37.509691603176854,
+    "lng": -77.45105287540143,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $26.0M, expected to wrap up Summer 2029.",
+    "manager": "Adel Edward",
+    "email": "Adel.Edward@rva.gov",
+    "phone": "804-646-6584"
   },
   {
     "id": "CIP-122",
@@ -789,10 +945,13 @@
     "totalBudget": 29500000,
     "spentToDate": 0,
     "estimatedCompletion": "Summer 2029",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $29.5M, expected to wrap up Summer 2029."
+    "lat": 37.50884717882913,
+    "lng": -77.45074842483413,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $29.5M, expected to wrap up Summer 2029.",
+    "manager": "Adel Edward",
+    "email": "Adel.Edward@rva.gov",
+    "phone": "804-646-6584"
   },
   {
     "id": "CIP-136",
@@ -804,10 +963,13 @@
     "totalBudget": 319140,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $319K."
+    "lat": 37.535602074985675,
+    "lng": -77.40689664730422,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $319K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-137",
@@ -819,10 +981,13 @@
     "totalBudget": 2486899,
     "spentToDate": 0,
     "estimatedCompletion": "Winter 2027",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $2.5M, expected to wrap up Winter 2027."
+    "lat": 37.53237006668664,
+    "lng": -77.42856534617246,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $2.5M, expected to wrap up Winter 2027.",
+    "manager": "Thomas Moore",
+    "email": "Thomas.Moore1@rva.gov",
+    "phone": "804-646-2720"
   },
   {
     "id": "CIP-139",
@@ -834,10 +999,13 @@
     "totalBudget": 484000,
     "spentToDate": 0,
     "estimatedCompletion": "Spring 2026",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $484K, expected to wrap up Spring 2026."
+    "lat": 37.53165425874434,
+    "lng": -77.43551184792304,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $484K, expected to wrap up Spring 2026.",
+    "manager": "Afshin Famili",
+    "email": "Afshin.Famili@rva.gov",
+    "phone": "804-646-6334"
   },
   {
     "id": "CIP-140",
@@ -849,10 +1017,13 @@
     "totalBudget": 14770000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $14.8M."
+    "lat": 37.529287072879065,
+    "lng": -77.43591159919688,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $14.8M.",
+    "manager": "Merrick Malone",
+    "email": "Merrick.Malone@rva.gov",
+    "phone": "804-646-7426"
   },
   {
     "id": "CIP-141",
@@ -864,10 +1035,13 @@
     "totalBudget": 6839000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $6.8M."
+    "lat": 37.52945904149504,
+    "lng": -77.42019112233064,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $6.8M.",
+    "manager": "Yongping Wang",
+    "email": "Yongping.Wang@rva.gov",
+    "phone": "804-646-2467"
   },
   {
     "id": "CIP-143",
@@ -879,10 +1053,13 @@
     "totalBudget": 8800000,
     "spentToDate": 0,
     "estimatedCompletion": "Spring 2027",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $8.8M, expected to wrap up Spring 2027."
+    "lat": 37.572636011312866,
+    "lng": -77.48655316989041,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $8.8M, expected to wrap up Spring 2027.",
+    "manager": "Winston Phillips",
+    "email": "Winston.Phillips@rva.gov",
+    "phone": "804-646-5994"
   },
   {
     "id": "CIP-146",
@@ -894,10 +1071,13 @@
     "totalBudget": 346409,
     "spentToDate": 0,
     "estimatedCompletion": "Spring 2026",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $346K, expected to wrap up Spring 2026."
+    "lat": 37.505590644690976,
+    "lng": -77.45672180245705,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $346K, expected to wrap up Spring 2026.",
+    "manager": "Payenda Anwari",
+    "email": "Payenda.Anwari@rva.gov",
+    "phone": "804-646-5402"
   },
   {
     "id": "CIP-148",
@@ -909,10 +1089,13 @@
     "totalBudget": 1100000,
     "spentToDate": 0,
     "estimatedCompletion": "Winter 2026",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $1.1M, expected to wrap up Winter 2026."
+    "lat": 37.48032907177705,
+    "lng": -77.48343193268624,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $1.1M, expected to wrap up Winter 2026.",
+    "manager": "Thomas Westbrook",
+    "email": "Thomas.Westbrook@rva.gov",
+    "phone": "804-646-3421"
   },
   {
     "id": "CIP-162",
@@ -924,10 +1107,13 @@
     "totalBudget": 750000,
     "spentToDate": 0,
     "estimatedCompletion": "Winter 2025",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This parks & recreation project is currently under construction with a total budget of $750K, expected to wrap up Winter 2025."
+    "lat": 37.589773024979785,
+    "lng": -77.46291482796777,
+    "geocodeFallback": false,
+    "plainSummary": "This parks & recreation project is currently under construction with a total budget of $750K, expected to wrap up Winter 2025.",
+    "manager": "Heywood Harrison",
+    "email": "Heywood.Harrison@rva.gov",
+    "phone": "804-646-5608"
   },
   {
     "id": "CIP-163",
@@ -939,10 +1125,13 @@
     "totalBudget": 1750000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This parks & recreation project is currently under construction with a total budget of $1.8M."
+    "lat": 37.5055218809539,
+    "lng": -77.46456326411086,
+    "geocodeFallback": false,
+    "plainSummary": "This parks & recreation project is currently under construction with a total budget of $1.8M.",
+    "manager": "Allen McCown",
+    "email": "allen.mccown@rva.gov",
+    "phone": "804-646-5949"
   },
   {
     "id": "CIP-164",
@@ -954,10 +1143,13 @@
     "totalBudget": 750000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This parks & recreation project is currently under construction with a total budget of $750K."
+    "lat": 37.54978722377683,
+    "lng": -77.49958467513143,
+    "geocodeFallback": false,
+    "plainSummary": "This parks & recreation project is currently under construction with a total budget of $750K.",
+    "manager": "Allen McCown",
+    "email": "allen.mccown@rva.gov",
+    "phone": "804-646-5949"
   },
   {
     "id": "CIP-165",
@@ -969,10 +1161,13 @@
     "totalBudget": 350000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This parks & recreation project is currently under construction with a total budget of $350K."
+    "lat": 37.549885975739116,
+    "lng": -77.49928602046391,
+    "geocodeFallback": false,
+    "plainSummary": "This parks & recreation project is currently under construction with a total budget of $350K.",
+    "manager": "Allen McCown",
+    "email": "allen.mccown@rva.gov",
+    "phone": "804-646-5949"
   },
   {
     "id": "CIP-166",
@@ -984,10 +1179,13 @@
     "totalBudget": 750000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This parks & recreation project is currently in design with a total budget of $750K."
+    "lat": 37.52728905248178,
+    "lng": -77.5001038636301,
+    "geocodeFallback": false,
+    "plainSummary": "This parks & recreation project is currently in design with a total budget of $750K.",
+    "manager": "Ryan Rinn",
+    "email": "ryan.rinn@rva.gov",
+    "phone": "804-646-4347"
   },
   {
     "id": "CIP-167",
@@ -999,10 +1197,13 @@
     "totalBudget": 100000,
     "spentToDate": 0,
     "estimatedCompletion": "Summer 2026",
-    "lat": 37.5407,
-    "lng": -77.436,
+    "lat": 37.536013750937826,
+    "lng": -77.43893606526848,
     "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $100K, expected to wrap up Summer 2026."
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $100K, expected to wrap up Summer 2026.",
+    "manager": "Afshin Famili",
+    "email": "Afshin.Famili@rva.gov",
+    "phone": "804-646-6334"
   },
   {
     "id": "CIP-168",
@@ -1014,10 +1215,13 @@
     "totalBudget": 3000000,
     "spentToDate": 0,
     "estimatedCompletion": "October 2026",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $3.0M, expected to wrap up October 2026."
+    "lat": 37.58849918916675,
+    "lng": -77.46324890576209,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $3.0M, expected to wrap up October 2026.",
+    "manager": "Adel Edward",
+    "email": "Adel.Edward@rva.gov",
+    "phone": "804-646-6584"
   },
   {
     "id": "CIP-169",
@@ -1029,10 +1233,13 @@
     "totalBudget": 1200000,
     "spentToDate": 0,
     "estimatedCompletion": "Winter 2026",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This parks & recreation project is currently under construction with a total budget of $1.2M, expected to wrap up Winter 2026."
+    "lat": 37.543787782307334,
+    "lng": -77.4120657114425,
+    "geocodeFallback": false,
+    "plainSummary": "This parks & recreation project is currently under construction with a total budget of $1.2M, expected to wrap up Winter 2026.",
+    "manager": "Daniel Hazlett",
+    "email": "daniel.hazlett@rva.gov",
+    "phone": "804-646-7506"
   },
   {
     "id": "CIP-170",
@@ -1044,10 +1251,13 @@
     "totalBudget": 1106000,
     "spentToDate": 0,
     "estimatedCompletion": "Summer 2027",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $1.1M, expected to wrap up Summer 2027."
+    "lat": 37.555022778780355,
+    "lng": -77.4707115063913,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $1.1M, expected to wrap up Summer 2027.",
+    "manager": "Olayinka Bruce",
+    "email": "Olayinka.Bruce@rva.gov",
+    "phone": "804-646-2312"
   },
   {
     "id": "CIP-171",
@@ -1059,10 +1269,13 @@
     "totalBudget": 30000000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This parks & recreation project is currently under construction with a total budget of $30.0M."
+    "lat": 37.52829572107251,
+    "lng": -77.4601322792538,
+    "geocodeFallback": false,
+    "plainSummary": "This parks & recreation project is currently under construction with a total budget of $30.0M.",
+    "manager": "Nissa Richardson",
+    "email": "Nissa.Richardson@rva.gov",
+    "phone": "804-646-5619"
   },
   {
     "id": "CIP-172",
@@ -1074,10 +1287,13 @@
     "totalBudget": 22551304,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $22.6M."
+    "lat": 37.55898940164878,
+    "lng": -77.41218569677261,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $22.6M.",
+    "manager": "Loren Brown",
+    "email": "Loren.Brown@rva.gov",
+    "phone": "804-646-6428"
   },
   {
     "id": "CIP-173",
@@ -1089,10 +1305,13 @@
     "totalBudget": 445500,
     "spentToDate": 0,
     "estimatedCompletion": "Summer 2025",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $446K, expected to wrap up Summer 2025."
+    "lat": 37.5339628259704,
+    "lng": -77.42047596846515,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $446K, expected to wrap up Summer 2025.",
+    "manager": "Thomas Moore",
+    "email": "Thomas.Moore1@rva.gov",
+    "phone": "804-646-2720"
   },
   {
     "id": "CIP-179",
@@ -1104,10 +1323,13 @@
     "totalBudget": 23000000,
     "spentToDate": 0,
     "estimatedCompletion": "Early 2029",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $23.0M, expected to wrap up Early 2029."
+    "lat": 37.514486061266,
+    "lng": -77.50918464251399,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $23.0M, expected to wrap up Early 2029.",
+    "manager": "Mohamed Benomar",
+    "email": "Mohamed.Benomar@rva.gov",
+    "phone": "804-987-7545"
   },
   {
     "id": "CIP-180",
@@ -1119,10 +1341,13 @@
     "totalBudget": 3000000,
     "spentToDate": 0,
     "estimatedCompletion": "Winter 2027",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $3.0M, expected to wrap up Winter 2027."
+    "lat": 37.530061932072734,
+    "lng": -77.43774397276404,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $3.0M, expected to wrap up Winter 2027.",
+    "manager": "Adel Edward",
+    "email": "Adel.Edward@rva.gov",
+    "phone": "804-646-6584"
   },
   {
     "id": "CIP-181",
@@ -1134,10 +1359,13 @@
     "totalBudget": 200000,
     "spentToDate": 0,
     "estimatedCompletion": "Summer 2025",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $200K, expected to wrap up Summer 2025."
+    "lat": 37.55213265528711,
+    "lng": -77.47562647729923,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $200K, expected to wrap up Summer 2025.",
+    "manager": "Thomas Moore",
+    "email": "Thomas.Moore1@rva.gov",
+    "phone": "804-646-2720"
   },
   {
     "id": "CIP-184",
@@ -1149,10 +1377,13 @@
     "totalBudget": 28213000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $28.2M."
+    "lat": 37.52008338973682,
+    "lng": -77.44424401412098,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $28.2M.",
+    "manager": "Timothy Lewis",
+    "email": "Timothy.Lewis3@rva.gov",
+    "phone": "TBD"
   },
   {
     "id": "CIP-185",
@@ -1164,10 +1395,13 @@
     "totalBudget": 340000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $340K."
+    "lat": 37.55547926057706,
+    "lng": -77.4799263655856,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $340K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-188",
@@ -1179,10 +1413,13 @@
     "totalBudget": 213747,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $214K."
+    "lat": 37.505248768897104,
+    "lng": -77.4568115308893,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $214K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-189",
@@ -1194,10 +1431,13 @@
     "totalBudget": 656000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $656K."
+    "lat": 37.541151290764226,
+    "lng": -77.4420032963557,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $656K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-190",
@@ -1209,10 +1449,13 @@
     "totalBudget": 355822,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $356K."
+    "lat": 37.532743542982224,
+    "lng": -77.42647540999357,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $356K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-194",
@@ -1224,10 +1467,13 @@
     "totalBudget": 60656,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $61K."
+    "lat": 37.4805074269207,
+    "lng": -77.48345334109881,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $61K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-195",
@@ -1239,10 +1485,13 @@
     "totalBudget": 166914,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $167K."
+    "lat": 37.50652694630472,
+    "lng": -77.48831794140477,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $167K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-198",
@@ -1254,10 +1503,13 @@
     "totalBudget": 680000,
     "spentToDate": 0,
     "estimatedCompletion": "N/A",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently complete with a total budget of $680K."
+    "lat": 37.49715871521891,
+    "lng": -77.46672472941103,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently complete with a total budget of $680K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-210",
@@ -1269,10 +1521,13 @@
     "totalBudget": 538086,
     "spentToDate": 0,
     "estimatedCompletion": "Summer 2026",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $538K, expected to wrap up Summer 2026."
+    "lat": 37.55927404301334,
+    "lng": -77.46395317214383,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $538K, expected to wrap up Summer 2026.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-212",
@@ -1284,10 +1539,13 @@
     "totalBudget": 1875000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $1.9M."
+    "lat": 37.509521369371875,
+    "lng": -77.4496485470424,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $1.9M.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-213",
@@ -1299,10 +1557,13 @@
     "totalBudget": 846793,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $847K."
+    "lat": 37.559241476318014,
+    "lng": -77.46390920002055,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $847K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-217",
@@ -1314,10 +1575,13 @@
     "totalBudget": 993209,
     "spentToDate": 0,
     "estimatedCompletion": "N/A",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently complete with a total budget of $993K."
+    "lat": 37.51946554963186,
+    "lng": -77.42941198590842,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently complete with a total budget of $993K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-221",
@@ -1329,10 +1593,13 @@
     "totalBudget": 6344831,
     "spentToDate": 0,
     "estimatedCompletion": "N/A",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $6.3M."
+    "lat": 37.51989137799984,
+    "lng": -77.44509471868463,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $6.3M.",
+    "manager": "Thomas Westbrook",
+    "email": "Thomas.Westbrook@rva.gov",
+    "phone": "804-646-3421"
   },
   {
     "id": "CIP-222",
@@ -1344,10 +1611,13 @@
     "totalBudget": 450000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This parks & recreation project is currently under construction with a total budget of $450K."
+    "lat": 37.480160693609484,
+    "lng": -77.48176649992388,
+    "geocodeFallback": false,
+    "plainSummary": "This parks & recreation project is currently under construction with a total budget of $450K.",
+    "manager": "Ryan Rinn",
+    "email": "Ryan.Rinn@rva.gov",
+    "phone": "804-646-4347"
   },
   {
     "id": "CIP-223",
@@ -1359,10 +1629,13 @@
     "totalBudget": 1000000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This parks & recreation project is currently under construction with a total budget of $1.0M."
+    "lat": 37.527771446018974,
+    "lng": -77.48132299875124,
+    "geocodeFallback": false,
+    "plainSummary": "This parks & recreation project is currently under construction with a total budget of $1.0M.",
+    "manager": "Heywood Harrison",
+    "email": "Heywood.Harrison@rva.gov",
+    "phone": "804-646-5608"
   },
   {
     "id": "CIP-224",
@@ -1374,10 +1647,13 @@
     "totalBudget": 350000,
     "spentToDate": 0,
     "estimatedCompletion": "N/A",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This parks & recreation project is currently complete with a total budget of $350K."
+    "lat": 37.53256829742308,
+    "lng": -77.4875495848196,
+    "geocodeFallback": false,
+    "plainSummary": "This parks & recreation project is currently complete with a total budget of $350K.",
+    "manager": "Daniel Hazlett",
+    "email": "daniel.hazlett@rva.gov",
+    "phone": "804-646-7506"
   },
   {
     "id": "CIP-226",
@@ -1389,10 +1665,13 @@
     "totalBudget": 300000,
     "spentToDate": 0,
     "estimatedCompletion": "Fall 2026",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This facilities project is currently in design with a total budget of $300K, expected to wrap up Fall 2026."
+    "lat": 37.51929566747225,
+    "lng": -77.42951862540998,
+    "geocodeFallback": false,
+    "plainSummary": "This facilities project is currently in design with a total budget of $300K, expected to wrap up Fall 2026.",
+    "manager": "Monica Kinsey",
+    "email": "Monica.Kinsey@rva.gov",
+    "phone": "804-646-3303"
   },
   {
     "id": "CIP-228",
@@ -1404,10 +1683,13 @@
     "totalBudget": 26804000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently on hold with a total budget of $26.8M."
+    "lat": 37.542680510221864,
+    "lng": -77.43809320822949,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently on hold with a total budget of $26.8M.",
+    "manager": "Yongping Wang",
+    "email": "Yongping.Wang@rva.gov",
+    "phone": "804-646-2467"
   },
   {
     "id": "CIP-229",
@@ -1419,10 +1701,13 @@
     "totalBudget": 586000,
     "spentToDate": 0,
     "estimatedCompletion": "Late 2028",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $586K, expected to wrap up Late 2028."
+    "lat": 37.546481890486085,
+    "lng": -77.44834498706588,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $586K, expected to wrap up Late 2028.",
+    "manager": "Mohamed Benomar",
+    "email": "Mohamed.Benomar@rva.gov",
+    "phone": "804-987-7545"
   },
   {
     "id": "CIP-230",
@@ -1434,10 +1719,13 @@
     "totalBudget": 18771000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently on hold with a total budget of $18.8M."
+    "lat": 37.54114492001749,
+    "lng": -77.43963900458525,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently on hold with a total budget of $18.8M.",
+    "manager": "TBD",
+    "email": "TBD",
+    "phone": "TBD"
   },
   {
     "id": "CIP-231",
@@ -1449,10 +1737,13 @@
     "totalBudget": 5341000,
     "spentToDate": 0,
     "estimatedCompletion": "Mid 2030",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $5.3M, expected to wrap up Mid 2030."
+    "lat": 37.527767052074466,
+    "lng": -77.4110198203059,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $5.3M, expected to wrap up Mid 2030.",
+    "manager": "Mohamed Benomar",
+    "email": "Mohamed.Benomar@rva.gov",
+    "phone": "804-987-7545"
   },
   {
     "id": "CIP-232",
@@ -1464,10 +1755,13 @@
     "totalBudget": 873000,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently on hold with a total budget of $873K."
+    "lat": 37.54517458183231,
+    "lng": -77.41132379491613,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently on hold with a total budget of $873K.",
+    "manager": "Thomas Moore",
+    "email": "Thomas.Moore1@rva.gov",
+    "phone": "804-646-2720"
   },
   {
     "id": "CIP-233",
@@ -1479,10 +1773,13 @@
     "totalBudget": 0,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This parks & recreation project is currently in design with a total budget of $0."
+    "lat": 37.52171678669839,
+    "lng": -77.44328570173249,
+    "geocodeFallback": false,
+    "plainSummary": "This parks & recreation project is currently in design with a total budget of $0.",
+    "manager": "TBD",
+    "email": "TBD",
+    "phone": "TBD"
   },
   {
     "id": "CIP-234",
@@ -1494,10 +1791,13 @@
     "totalBudget": 509617,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This parks & recreation project is currently in design with a total budget of $510K."
+    "lat": 37.588936285548805,
+    "lng": -77.46231245202272,
+    "geocodeFallback": false,
+    "plainSummary": "This parks & recreation project is currently in design with a total budget of $510K.",
+    "manager": "Heywood Harrison",
+    "email": "Heywood.Harrison@rva.gov",
+    "phone": "804-646-5608"
   },
   {
     "id": "CIP-235",
@@ -1509,10 +1809,13 @@
     "totalBudget": 700782,
     "spentToDate": 0,
     "estimatedCompletion": "N/A",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently complete with a total budget of $701K."
+    "lat": 37.477458804811235,
+    "lng": -77.50386038695196,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently complete with a total budget of $701K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-236",
@@ -1524,10 +1827,13 @@
     "totalBudget": 32550,
     "spentToDate": 0,
     "estimatedCompletion": "N/A",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently complete with a total budget of $33K."
+    "lat": 37.502395769769315,
+    "lng": -77.50003767776272,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently complete with a total budget of $33K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-237",
@@ -1539,10 +1845,13 @@
     "totalBudget": 1011108,
     "spentToDate": 0,
     "estimatedCompletion": "N/A",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently complete with a total budget of $1.0M."
+    "lat": 37.54630476232701,
+    "lng": -77.44911085725093,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently complete with a total budget of $1.0M.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-238",
@@ -1554,10 +1863,13 @@
     "totalBudget": 3107471,
     "spentToDate": 0,
     "estimatedCompletion": "N/A",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently complete with a total budget of $3.1M."
+    "lat": 37.49717963916901,
+    "lng": -77.4474308691732,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently complete with a total budget of $3.1M.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-239",
@@ -1569,10 +1881,13 @@
     "totalBudget": 77205,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $77K."
+    "lat": 37.480484629031345,
+    "lng": -77.49606945476889,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $77K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-240",
@@ -1584,10 +1899,13 @@
     "totalBudget": 90757,
     "spentToDate": 0,
     "estimatedCompletion": "Fall 2025",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $91K, expected to wrap up Fall 2025."
+    "lat": 37.50515553749826,
+    "lng": -77.47173202963818,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $91K, expected to wrap up Fall 2025.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-241",
@@ -1599,10 +1917,13 @@
     "totalBudget": 381852,
     "spentToDate": 0,
     "estimatedCompletion": "Fall 2025",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $382K, expected to wrap up Fall 2025."
+    "lat": 37.537676416909065,
+    "lng": -77.43351925166014,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $382K, expected to wrap up Fall 2025.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-242",
@@ -1614,10 +1935,13 @@
     "totalBudget": 1101286,
     "spentToDate": 0,
     "estimatedCompletion": "N/A",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently complete with a total budget of $1.1M."
+    "lat": 37.53426086738179,
+    "lng": -77.42024269735445,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently complete with a total budget of $1.1M.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-244",
@@ -1629,10 +1953,13 @@
     "totalBudget": 900682,
     "spentToDate": 0,
     "estimatedCompletion": "Summer 2026",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $901K, expected to wrap up Summer 2026."
+    "lat": 37.5340331201649,
+    "lng": -77.41953980235554,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $901K, expected to wrap up Summer 2026.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-245",
@@ -1644,10 +1971,13 @@
     "totalBudget": 257473,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $257K."
+    "lat": 37.54331826376157,
+    "lng": -77.44246598995613,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $257K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-246",
@@ -1659,10 +1989,13 @@
     "totalBudget": 253750,
     "spentToDate": 0,
     "estimatedCompletion": "Summer 2026",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $254K, expected to wrap up Summer 2026."
+    "lat": 37.53716315175642,
+    "lng": -77.40816653701789,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $254K, expected to wrap up Summer 2026.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-247",
@@ -1674,10 +2007,13 @@
     "totalBudget": 24435,
     "spentToDate": 0,
     "estimatedCompletion": "N/A",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently complete with a total budget of $24K."
+    "lat": 37.55299306795868,
+    "lng": -77.47400652428479,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently complete with a total budget of $24K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-248",
@@ -1689,10 +2025,13 @@
     "totalBudget": 57110,
     "spentToDate": 0,
     "estimatedCompletion": "N/A",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently complete with a total budget of $57K."
+    "lat": 37.552679575464026,
+    "lng": -77.4761819738884,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently complete with a total budget of $57K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-249",
@@ -1704,10 +2043,13 @@
     "totalBudget": 300323,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $300K."
+    "lat": 37.50443224105611,
+    "lng": -77.47438054107322,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $300K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-250",
@@ -1719,10 +2061,13 @@
     "totalBudget": 497325,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $497K."
+    "lat": 37.48675346357277,
+    "lng": -77.5171210102133,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $497K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-251",
@@ -1734,10 +2079,13 @@
     "totalBudget": 475855,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $476K."
+    "lat": 37.537869894981185,
+    "lng": -77.50138791648902,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $476K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-252",
@@ -1749,10 +2097,13 @@
     "totalBudget": 338165,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $338K."
+    "lat": 37.56906111498812,
+    "lng": -77.51890512872424,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $338K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-253",
@@ -1764,10 +2115,13 @@
     "totalBudget": 73416,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $73K."
+    "lat": 37.5312389474161,
+    "lng": -77.48880420553076,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $73K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-254",
@@ -1779,10 +2133,13 @@
     "totalBudget": 986667,
     "spentToDate": 0,
     "estimatedCompletion": "Summer 2026",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $987K, expected to wrap up Summer 2026."
+    "lat": 37.506229933597076,
+    "lng": -77.45729236765305,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $987K, expected to wrap up Summer 2026.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-255",
@@ -1794,10 +2151,13 @@
     "totalBudget": 95762,
     "spentToDate": 0,
     "estimatedCompletion": "Fall 2025",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $96K, expected to wrap up Fall 2025."
+    "lat": 37.53589941736054,
+    "lng": -77.43357119365149,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently under construction with a total budget of $96K, expected to wrap up Fall 2025.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-256",
@@ -1809,10 +2169,13 @@
     "totalBudget": 34684,
     "spentToDate": 0,
     "estimatedCompletion": "N/A",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently complete with a total budget of $35K."
+    "lat": 37.546597026372964,
+    "lng": -77.41292447104068,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently complete with a total budget of $35K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-257",
@@ -1824,10 +2187,13 @@
     "totalBudget": 696388,
     "spentToDate": 0,
     "estimatedCompletion": "N/A",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently complete with a total budget of $696K."
+    "lat": 37.545496707644254,
+    "lng": -77.41297676425651,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently complete with a total budget of $696K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-259",
@@ -1839,10 +2205,13 @@
     "totalBudget": 713593,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $714K."
+    "lat": 37.49522899617407,
+    "lng": -77.47507819476043,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $714K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-260",
@@ -1854,10 +2223,13 @@
     "totalBudget": 519766,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently in design with a total budget of $520K."
+    "lat": 37.555917703236645,
+    "lng": -77.47940226410704,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently in design with a total budget of $520K.",
+    "manager": "Kenny Horak",
+    "email": "Kenneth.Horak@rva.gov",
+    "phone": "804-646-4781"
   },
   {
     "id": "CIP-263",
@@ -1869,9 +2241,11 @@
     "totalBudget": 4388200,
     "spentToDate": 0,
     "estimatedCompletion": "TBD",
-    "lat": 37.5407,
-    "lng": -77.436,
-    "geocodeFallback": true,
-    "plainSummary": "This roads & bridges project is currently on hold with a total budget of $4.4M."
+    "lat": 37.540106570158464,
+    "lng": -77.43897028861527,
+    "geocodeFallback": false,
+    "plainSummary": "This roads & bridges project is currently on hold with a total budget of $4.4M.",
+    "manager": "Timothy Lewis",
+    "email": "Timothy.Lewis3@rva.gov"
   }
 ]

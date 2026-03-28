@@ -37,7 +37,6 @@ export default function App() {
   const nearbyProjects = useMemo(() => {
     if (!searchLocation) return categoryFiltered;
     return categoryFiltered
-      .filter(p => !p.geocodeFallback)
       .map(p => ({
         ...p,
         distanceFromSearch: haversineDistance(searchLocation.lat, searchLocation.lng, p.lat, p.lng),
@@ -54,7 +53,8 @@ export default function App() {
   const handleProjectSelect = useCallback((project: CIPProject) => {
     setSelectedProject(project);
     if (mapRef.current) {
-      mapRef.current.flyTo([project.lat, project.lng], 15, { duration: 0.8 });
+      const currentZoom = mapRef.current.getZoom();
+      mapRef.current.flyTo([project.lat, project.lng], Math.max(currentZoom, 15), { duration: 0.8 });
     }
   }, []);
 
@@ -110,7 +110,6 @@ export default function App() {
         <div className="flex-1 md:flex-[3] relative min-h-[40vh]">
           <MapView
             projects={displayProjects}
-            selectedProject={selectedProject}
             searchLocation={searchLocation}
             onProjectSelect={handleProjectSelect}
             mapRef={mapRef}

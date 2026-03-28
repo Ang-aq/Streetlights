@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Brand font */
+.font-brand {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
 /* Leaflet overrides */
 .leaflet-container {
   width: 100%;

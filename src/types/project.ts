@@ -29,5 +29,8 @@ export interface CIPProject {
   lng: number;
   geocodeFallback: boolean;
   plainSummary: string;
+  manager?: string;
+  email?: string;
+  phone?: string;
   distanceFromSearch?: number;
 }

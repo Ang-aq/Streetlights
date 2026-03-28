@@ -2,6 +2,8 @@ import { useEffect, useRef, type RefObject } from 'react';
 import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet.markercluster';
+import 'leaflet.markercluster/dist/MarkerCluster.css';
+import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 import type { Map as LeafletMap } from 'leaflet';
 import type { CIPProject } from '../types/project';
 import type { SearchLocation } from '../App';
@@ -29,11 +31,10 @@ const YOU_ARE_HERE_ICON = L.divIcon({
 // ─── Cluster layer managed imperatively ───────────────────────────────────────
 interface ClusterLayerProps {
   projects: CIPProject[];
-  selectedProject: CIPProject | null;
   onProjectSelect: (p: CIPProject) => void;
 }
 
-function ClusterLayer({ projects, selectedProject, onProjectSelect }: ClusterLayerProps) {
+function ClusterLayer({ projects, onProjectSelect }: ClusterLayerProps) {
   const map = useMap();
   const clusterGroupRef = useRef<L.MarkerClusterGroup | null>(null);
 
@@ -85,10 +86,7 @@ function ClusterLayer({ projects, selectedProject, onProjectSelect }: ClusterLay
   }, [projects, onProjectSelect]);
 
   // Highlight selected marker (optional visual feedback — bring it to front)
-  useEffect(() => {
-    if (!selectedProject) return;
-    // flyTo is handled by App.tsx via mapRef; nothing extra needed here
-  }, [selectedProject]);
+  // flyTo is handled by App.tsx via mapRef
 
   return null;
 }
@@ -107,7 +105,6 @@ function SearchMarker({ searchLocation }: { searchLocation: SearchLocation | nul
 // ─── Main MapView ──────────────────────────────────────────────────────────────
 interface Props {
   projects: CIPProject[];
-  selectedProject: CIPProject | null;
   searchLocation: SearchLocation | null;
   onProjectSelect: (p: CIPProject) => void;
   mapRef: RefObject<LeafletMap | null>;
@@ -117,9 +114,9 @@ interface Props {
 function MapRefSetter({ mapRef }: { mapRef: RefObject<LeafletMap | null> }) {
   const map = useMap();
   useEffect(() => {
-    (mapRef as React.MutableRefObject<LeafletMap | null>).current = map;
+    (mapRef as { current: LeafletMap | null }).current = map;
     return () => {
-      (mapRef as React.MutableRefObject<LeafletMap | null>).current = null;
+      (mapRef as { current: LeafletMap | null }).current = null;
     };
   }, [map, mapRef]);
   return null;
@@ -127,7 +124,6 @@ function MapRefSetter({ mapRef }: { mapRef: RefObject<LeafletMap | null> }) {
 
 export default function MapView({
   projects,
-  selectedProject,
   searchLocation,
   onProjectSelect,
   mapRef,
@@ -149,7 +145,6 @@ export default function MapView({
 
         <ClusterLayer
           projects={projects}
-          selectedProject={selectedProject}
           onProjectSelect={onProjectSelect}
         />
 

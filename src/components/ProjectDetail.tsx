@@ -110,10 +110,31 @@ export default function ProjectDetail({ project, onClose }: Props) {
           <div className="bg-green-50 border border-green-200 rounded-lg px-3 py-2">
             <p className="text-xs font-semibold text-green-700 mb-0.5">Get project updates</p>
             <p className="text-sm text-green-800 leading-snug">
-              Text <strong>RVA CIP</strong> to <strong>804-555-0199</strong> to receive updates about this
-              project. <em className="text-xs text-green-600">(Prototype: SMS not yet active)</em>
+              Text <strong>RICHMOND-{project.id.replace('CIP-', '')}</strong> to{' '}
+              <strong>(804) 555-0130</strong> to receive updates about this project.{' '}
+              <em className="text-xs text-green-600">(Prototype: SMS not yet active)</em>
             </p>
           </div>
+
+          {/* Project manager */}
+          {(project.manager || project.email || project.phone) && (
+            <div>
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">Project Manager</p>
+              <div className="space-y-0.5 text-sm text-gray-700">
+                {project.manager && <p className="font-medium">{project.manager}</p>}
+                {project.email && (
+                  <a href={`mailto:${project.email}`} className="block text-blue-600 hover:underline text-xs">
+                    {project.email}
+                  </a>
+                )}
+                {project.phone && (
+                  <a href={`tel:${project.phone}`} className="block text-blue-600 hover:underline text-xs">
+                    {project.phone}
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
 
           {/* Data notice */}
           <p className="text-xs text-gray-400 leading-snug">

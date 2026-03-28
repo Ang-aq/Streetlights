@@ -41,7 +41,10 @@ export function useNominatim(): UseNominatimReturn {
 
     try {
       const res = await fetch(url.toString(), {
-        headers: { 'Accept-Language': 'en' },
+        headers: {
+          'Accept-Language': 'en',
+          'User-Agent': 'RVAInfrastructureExplorer/1.0 (Richmond Civic Hackathon 2026)',
+        },
       });
 
       if (!res.ok) {
