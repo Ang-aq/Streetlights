@@ -2,7 +2,9 @@ import { useState, useCallback, useMemo, useRef } from 'react';
 import type { Map as LeafletMap } from 'leaflet';
 import { projects } from './data';
 import type { CIPProject, ProjectCategory } from './types/project';
+import type { Report } from './types/report';
 import { haversineDistance } from './utils/geo';
+import { useReports } from './hooks/useReports';
 import AppHeader from './components/AppHeader';
 import PrototypeBanner from './components/PrototypeBanner';
 import MapView from './components/Map';
@@ -10,6 +12,8 @@ import SearchBar from './components/SearchBar';
 import ProjectList from './components/ProjectList';
 import ProjectDetail from './components/ProjectDetail';
 import CategoryFilter from './components/CategoryFilter';
+import ReportModal from './components/ReportModal';
+import PriorityList from './components/PriorityList';
 
 export interface SearchLocation {
   lat: number;
@@ -26,6 +30,11 @@ export default function App() {
   const [radiusMiles, setRadiusMiles] = useState<number>(DEFAULT_RADIUS);
   const [selectedProject, setSelectedProject] = useState<CIPProject | null>(null);
   const [activeCategories, setActiveCategories] = useState<Set<ProjectCategory>>(new Set());
+
+  // Reporting state
+  const { reports, priorityReports, likedIds, addReport, likeReport } = useReports();
+  const [reportClickPos, setReportClickPos] = useState<{ lat: number; lng: number } | null>(null);
+  const [showPriorityList, setShowPriorityList] = useState(false);
 
   // Category-filtered project list
   const categoryFiltered = useMemo(() => {
@@ -74,6 +83,26 @@ export default function App() {
     setActiveCategories(new Set());
   }, []);
 
+  // Map click → open ReportModal
+  const handleMapClick = useCallback((lat: number, lng: number) => {
+    setReportClickPos({ lat, lng });
+  }, []);
+
+  // ReportModal submit
+  const handleReportSubmit = useCallback((typeId: import('./types/report').ReportTypeId) => {
+    if (!reportClickPos) return;
+    addReport(typeId, reportClickPos.lat, reportClickPos.lng);
+    setReportClickPos(null);
+  }, [reportClickPos, addReport]);
+
+  // PriorityList "View on map"
+  const handleLocateReport = useCallback((report: Report) => {
+    setShowPriorityList(false);
+    if (mapRef.current) {
+      mapRef.current.flyTo([report.lat, report.lng], 17, { duration: 0.8 });
+    }
+  }, []);
+
   const displayProjects = searchLocation ? nearbyProjects : categoryFiltered;
 
   return (
@@ -113,6 +142,11 @@ export default function App() {
             searchLocation={searchLocation}
             onProjectSelect={handleProjectSelect}
             mapRef={mapRef}
+            reports={reports}
+            likedIds={likedIds}
+            onMapClick={handleMapClick}
+            onReportLike={likeReport}
+            onOpenPriorityList={() => setShowPriorityList(true)}
           />
         </div>
 
@@ -127,11 +161,32 @@ export default function App() {
         </div>
       </div>
 
-      {/* Detail panel overlay */}
+      {/* Project detail overlay */}
       {selectedProject && (
         <ProjectDetail
           project={selectedProject}
           onClose={() => setSelectedProject(null)}
+        />
+      )}
+
+      {/* Report modal */}
+      {reportClickPos && (
+        <ReportModal
+          lat={reportClickPos.lat}
+          lng={reportClickPos.lng}
+          onSubmit={handleReportSubmit}
+          onCancel={() => setReportClickPos(null)}
+        />
+      )}
+
+      {/* Priority list panel */}
+      {showPriorityList && (
+        <PriorityList
+          reports={priorityReports}
+          likedIds={likedIds}
+          onLike={likeReport}
+          onLocate={handleLocateReport}
+          onClose={() => setShowPriorityList(false)}
         />
       )}
     </div>

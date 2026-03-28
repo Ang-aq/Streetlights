@@ -1,13 +1,16 @@
 import { useEffect, useRef, type RefObject } from 'react';
-import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, useMap, useMapEvents } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet.markercluster';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 import type { Map as LeafletMap } from 'leaflet';
 import type { CIPProject } from '../types/project';
+import type { Report } from '../types/report';
+import { REPORT_TYPES } from '../types/report';
 import type { SearchLocation } from '../App';
 import { createColoredIcon } from '../utils/markerColors';
+import { reportMarkerHtml } from '../utils/reportIcons';
 import MapLegend from './MapLegend';
 
 // Richmond, VA center
@@ -39,7 +42,6 @@ function ClusterLayer({ projects, onProjectSelect }: ClusterLayerProps) {
   const clusterGroupRef = useRef<L.MarkerClusterGroup | null>(null);
 
   useEffect(() => {
-    // Create cluster group once
     if (!clusterGroupRef.current) {
       clusterGroupRef.current = (L as unknown as Record<string, (...args: unknown[]) => L.MarkerClusterGroup>)
         .markerClusterGroup({
@@ -77,7 +79,8 @@ function ClusterLayer({ projects, onProjectSelect }: ClusterLayerProps) {
         { maxWidth: 260 }
       );
 
-      marker.on('click', () => {
+      marker.on('click', (e) => {
+        L.DomEvent.stopPropagation(e);
         onProjectSelect(project);
       });
 
@@ -85,9 +88,100 @@ function ClusterLayer({ projects, onProjectSelect }: ClusterLayerProps) {
     });
   }, [projects, onProjectSelect]);
 
-  // Highlight selected marker (optional visual feedback — bring it to front)
-  // flyTo is handled by App.tsx via mapRef
+  return null;
+}
 
+// ─── Report markers layer managed imperatively ────────────────────────────────
+interface ReportLayerProps {
+  reports: Report[];
+  likedIds: Set<string>;
+  onReportLike: (id: string) => void;
+}
+
+// Global callback so popup Like buttons (plain HTML) can call back into React
+declare global {
+  interface Window {
+    __streetlightsLike?: (id: string) => void;
+  }
+}
+
+function ReportLayer({ reports, likedIds, onReportLike }: ReportLayerProps) {
+  const map = useMap();
+  const markersRef = useRef<L.Marker[]>([]);
+
+  // Keep the global callback in sync
+  useEffect(() => {
+    window.__streetlightsLike = onReportLike;
+  }, [onReportLike]);
+
+  useEffect(() => {
+    // Remove all previous report markers
+    markersRef.current.forEach(m => map.removeLayer(m));
+    markersRef.current = [];
+
+    reports.forEach(report => {
+      const typeDef = REPORT_TYPES.find(t => t.id === report.typeId);
+      if (!typeDef) return;
+
+      const alreadyLiked = likedIds.has(report.id);
+      const icon = L.divIcon({
+        className: '',
+        html: reportMarkerHtml(report.typeId, typeDef.color, report.likes),
+        iconSize: [32, 32],
+        iconAnchor: [16, 16],
+        popupAnchor: [0, -20],
+      });
+
+      const marker = L.marker([report.lat, report.lng], { icon });
+
+      const likeBtn = alreadyLiked
+        ? `<span style="font-size:11px;color:#6b7280;">Already upvoted</span>`
+        : `<button onclick="window.__streetlightsLike && window.__streetlightsLike('${report.id}')"
+            style="margin-top:6px;padding:3px 10px;border-radius:999px;border:none;
+              background:#2563eb;color:white;font-size:11px;font-weight:600;cursor:pointer;">
+            ▲ Upvote
+          </button>`;
+
+      marker.bindPopup(
+        `<div style="min-width:140px;text-align:center">
+          <p style="font-weight:600;font-size:13px;margin:0 0 2px">${typeDef.label}</p>
+          <p style="font-size:11px;color:#555;margin:0">${report.likes} upvote${report.likes !== 1 ? 's' : ''}</p>
+          ${likeBtn}
+        </div>`,
+        { maxWidth: 200 }
+      );
+
+      marker.on('click', (e) => {
+        L.DomEvent.stopPropagation(e);
+      });
+
+      marker.addTo(map);
+      markersRef.current.push(marker);
+    });
+
+    return () => {
+      markersRef.current.forEach(m => map.removeLayer(m));
+      markersRef.current = [];
+    };
+  }, [reports, likedIds, map]);
+
+  return null;
+}
+
+// ─── Map click handler ─────────────────────────────────────────────────────────
+function MapClickHandler({ onMapClick }: { onMapClick: (lat: number, lng: number) => void }) {
+  useMapEvents({
+    click(e) {
+      // Ignore clicks that originated from a marker or popup
+      const target = e.originalEvent.target as HTMLElement;
+      if (
+        target.closest('.leaflet-marker-icon') ||
+        target.closest('.leaflet-popup') ||
+        target.closest('.leaflet-marker-pane')
+      ) return;
+      onMapClick(e.latlng.lat, e.latlng.lng);
+    },
+  });
   return null;
 }
 
@@ -102,15 +196,7 @@ function SearchMarker({ searchLocation }: { searchLocation: SearchLocation | nul
   );
 }
 
-// ─── Main MapView ──────────────────────────────────────────────────────────────
-interface Props {
-  projects: CIPProject[];
-  searchLocation: SearchLocation | null;
-  onProjectSelect: (p: CIPProject) => void;
-  mapRef: RefObject<LeafletMap | null>;
-}
-
-// Inner component that has access to the map instance
+// ─── Map ref setter ────────────────────────────────────────────────────────────
 function MapRefSetter({ mapRef }: { mapRef: RefObject<LeafletMap | null> }) {
   const map = useMap();
   useEffect(() => {
@@ -122,11 +208,29 @@ function MapRefSetter({ mapRef }: { mapRef: RefObject<LeafletMap | null> }) {
   return null;
 }
 
+// ─── Main MapView ──────────────────────────────────────────────────────────────
+interface Props {
+  projects: CIPProject[];
+  searchLocation: SearchLocation | null;
+  onProjectSelect: (p: CIPProject) => void;
+  mapRef: RefObject<LeafletMap | null>;
+  reports: Report[];
+  likedIds: Set<string>;
+  onMapClick: (lat: number, lng: number) => void;
+  onReportLike: (id: string) => void;
+  onOpenPriorityList: () => void;
+}
+
 export default function MapView({
   projects,
   searchLocation,
   onProjectSelect,
   mapRef,
+  reports,
+  likedIds,
+  onMapClick,
+  onReportLike,
+  onOpenPriorityList,
 }: Props) {
   return (
     <div className="relative h-full w-full">
@@ -148,13 +252,37 @@ export default function MapView({
           onProjectSelect={onProjectSelect}
         />
 
+        <ReportLayer
+          reports={reports}
+          likedIds={likedIds}
+          onReportLike={onReportLike}
+        />
+
+        <MapClickHandler onMapClick={onMapClick} />
+
         <SearchMarker searchLocation={searchLocation} />
       </MapContainer>
 
-      {/* Legend — positioned bottom-left inside the map div */}
+      {/* Legend — bottom-left */}
       <div className="absolute bottom-6 left-2 z-[500] pointer-events-none">
         <MapLegend />
       </div>
+
+      {/* FAB — bottom-right "Reports" button */}
+      <button
+        onClick={onOpenPriorityList}
+        className="absolute bottom-6 right-10 z-[500]
+                   flex items-center gap-1.5 px-3 py-2
+                   bg-slate-900 text-white text-xs font-semibold
+                   rounded-full shadow-lg
+                   hover:bg-slate-700 active:scale-95 transition-all"
+      >
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <circle cx="7" cy="7" r="6" stroke="white" strokeWidth="1.5"/>
+          <path d="M4 5h6M4 7h6M4 9h4" stroke="white" strokeWidth="1.2" strokeLinecap="round"/>
+        </svg>
+        {reports.length > 0 ? `${reports.length} Report${reports.length !== 1 ? 's' : ''}` : 'Reports'}
+      </button>
     </div>
   );
 }
