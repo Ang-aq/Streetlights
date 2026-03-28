@@ -77,10 +77,11 @@ Error generating stack: `+a.message+`
         <line x1="7" y1="5.5" x2="7" y2="9" ${n}/>
         <line x1="8.5" y1="5.5" x2="9.5" y2="8.5" ${n}/>
       `;case"stoplight":return`
-        <path d="M12 2 L17.5 20 H6.5 Z" ${n}/>
-        <line x1="7.5" y1="13" x2="16.5" y2="13" ${n}/>
-        <line x1="8.5" y1="17" x2="15.5" y2="17" ${n}/>
-        <line x1="5.5" y1="20" x2="18.5" y2="20" ${n}/>
+        <rect x="7.5" y="1.5" width="9" height="15" rx="1.5" ${n}/>
+        <circle cx="12" cy="5.5" r="1.8" ${n}/>
+        <circle cx="12" cy="9" r="1.8" ${n}/>
+        <circle cx="12" cy="12.5" r="1.8" ${n}/>
+        <line x1="12" y1="16.5" x2="12" y2="22" ${n}/>
       `;case"pothole":return`
         <rect x="2" y="6" width="20" height="8" rx="1" ${n}/>
         <path ${n} d="M17 14v7"/>
