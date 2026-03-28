@@ -139,10 +139,10 @@ export default function TopBar({
         {/* Right controls */}
         <div className="flex items-center gap-1 flex-none">
 
-          {/* Filters — dropdown disabled on mobile */}
+          {/* Filters */}
           <div className="relative" ref={filtersRef}>
             <button
-              onClick={() => { if (window.innerWidth >= 768) setShowFilters(v => !v); }}
+              onClick={() => setShowFilters(v => !v)}
               className={`flex items-center gap-1 px-2 py-1.5 rounded-lg text-xs font-medium border transition-colors ${
                 activeCategories.size > 0
                   ? 'bg-slate-800 border-slate-800 text-white'
@@ -269,7 +269,7 @@ export default function TopBar({
       {/* ── Info modal ── */}
       {showInfo && (
         <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center"
+          className="fixed inset-0 z-[700] flex items-center justify-center"
           style={{ background: 'rgba(0,0,0,0.45)' }}
           onClick={() => setShowInfo(false)}
         >
