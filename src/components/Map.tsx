@@ -219,6 +219,7 @@ interface Props {
   onMapClick: (lat: number, lng: number) => void;
   onReportLike: (id: string) => void;
   onOpenPriorityList: () => void;
+  bottomPad: number;
 }
 
 export default function MapView({
@@ -231,6 +232,7 @@ export default function MapView({
   onMapClick,
   onReportLike,
   onOpenPriorityList,
+  bottomPad,
 }: Props) {
   return (
     <div className="relative h-full w-full">
@@ -263,25 +265,27 @@ export default function MapView({
         <SearchMarker searchLocation={searchLocation} />
       </MapContainer>
 
-      {/* Legend — bottom-left */}
-      <div className="absolute bottom-6 left-2 z-[500] pointer-events-none">
+      {/* Legend — bottom-left, above the bottom sheet */}
+      <div className="absolute left-2 z-[500] pointer-events-none" style={{ bottom: bottomPad }}>
         <MapLegend />
       </div>
 
-      {/* FAB — bottom-right "Reports" button */}
+      {/* Report FAB — bottom-right, above the bottom sheet, warning triangle icon only */}
       <button
         onClick={onOpenPriorityList}
-        className="absolute bottom-6 right-10 z-[500]
-                   flex items-center gap-1.5 px-3 py-2
-                   bg-slate-900 text-white text-xs font-semibold
-                   rounded-full shadow-lg
-                   hover:bg-slate-700 active:scale-95 transition-all"
+        title="View community reports"
+        className="absolute right-3 z-[500] p-3 bg-amber-500 hover:bg-amber-400
+                   text-white rounded-full shadow-lg active:scale-95 transition-all"
+        style={{ bottom: bottomPad }}
       >
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <circle cx="7" cy="7" r="6" stroke="white" strokeWidth="1.5"/>
-          <path d="M4 5h6M4 7h6M4 9h4" stroke="white" strokeWidth="1.2" strokeLinecap="round"/>
+        <svg width="20" height="18" viewBox="0 0 20 18" fill="none" aria-hidden="true">
+          <path
+            d="M10 2L2 17h16L10 2z"
+            stroke="white" strokeWidth="1.8" strokeLinejoin="round" fill="none"
+          />
+          <path d="M10 8v4" stroke="white" strokeWidth="2" strokeLinecap="round" />
+          <circle cx="10" cy="14.5" r="1.1" fill="white" />
         </svg>
-        {reports.length > 0 ? `${reports.length} Report${reports.length !== 1 ? 's' : ''}` : 'Reports'}
       </button>
     </div>
   );

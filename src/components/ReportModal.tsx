@@ -1,6 +1,6 @@
 import { REPORT_TYPES } from '../types/report';
 import type { ReportTypeId } from '../types/report';
-import { reportIconSvg } from '../utils/reportIcons';
+import ReportIcon from '../utils/ReportIcon';
 
 interface Props {
   lat: number;
@@ -40,11 +40,7 @@ export default function ReportModal({ lat, lng, onSubmit, onCancel }: Props) {
                          hover:border-amber-400 hover:bg-amber-50 active:scale-95
                          transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-amber-400"
             >
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: reportIconSvg(type.id, 40, type.color),
-                }}
-              />
+              <ReportIcon typeId={type.id} color={type.color} size={40} />
               <span className="text-[11px] font-medium text-gray-700 text-center leading-tight">
                 {type.label}
               </span>

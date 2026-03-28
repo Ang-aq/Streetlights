@@ -1,6 +1,6 @@
 import { REPORT_TYPES } from '../types/report';
 import type { Report } from '../types/report';
-import { reportIconSvg } from '../utils/reportIcons';
+import ReportIcon from '../utils/ReportIcon';
 
 interface Props {
   reports: Report[];
@@ -69,10 +69,7 @@ export default function PriorityList({ reports, likedIds, onLike, onLocate, onCl
                 return (
                   <li key={report.id} className="flex items-center gap-3 px-4 py-3">
                     {/* Icon */}
-                    <span
-                      className="flex-none"
-                      dangerouslySetInnerHTML={{ __html: reportIconSvg(report.typeId, 36, typeDef.color) }}
-                    />
+                    <ReportIcon typeId={report.typeId} color={typeDef.color} size={36} />
 
                     {/* Info */}
                     <div className="flex-1 min-w-0">

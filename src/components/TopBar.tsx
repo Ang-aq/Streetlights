@@ -30,15 +30,12 @@ interface Props {
   radiusOptions: number[];
   onRadiusChange: (r: number) => void;
   nearbyCount: number | null;
-  sidebarOpen: boolean;
-  onToggleSidebar: () => void;
 }
 
 export default function TopBar({
   searchLocation, onSearch, onClearSearch, mapRef,
   allProjects, activeCategories, onToggleCategory, onClearCategories,
   radiusMiles, radiusOptions, onRadiusChange, nearbyCount,
-  sidebarOpen, onToggleSidebar,
 }: Props) {
   const [query, setQuery]           = useState('');
   const [showFilters, setShowFilters] = useState(false);
@@ -197,23 +194,6 @@ export default function TopBar({
               </div>
             )}
           </div>
-
-          {/* List toggle */}
-          <button
-            onClick={onToggleSidebar}
-            title={sidebarOpen ? 'Hide list' : 'Show list'}
-            className={`p-1.5 rounded-lg border text-sm transition-colors ${
-              sidebarOpen
-                ? 'bg-slate-800 border-slate-800 text-white'
-                : 'border-gray-300 text-gray-500 hover:border-gray-400 hover:bg-gray-50'
-            }`}
-          >
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <rect x="1" y="2.5" width="14" height="1.5" rx="0.75" fill="currentColor"/>
-              <rect x="1" y="7.25" width="14" height="1.5" rx="0.75" fill="currentColor"/>
-              <rect x="1" y="12" width="9"  height="1.5" rx="0.75" fill="currentColor"/>
-            </svg>
-          </button>
 
           {/* Info */}
           <button
