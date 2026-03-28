@@ -30,16 +30,18 @@ interface Props {
   radiusOptions: number[];
   onRadiusChange: (r: number) => void;
   nearbyCount: number | null;
+  showInfo: boolean;
+  onShowInfo: (v: boolean) => void;
 }
 
 export default function TopBar({
   searchLocation, onSearch, onClearSearch, mapRef,
   allProjects, activeCategories, onToggleCategory, onClearCategories,
   radiusMiles, radiusOptions, onRadiusChange, nearbyCount,
+  showInfo, onShowInfo,
 }: Props) {
   const [query, setQuery]           = useState('');
   const [showFilters, setShowFilters] = useState(false);
-  const [showInfo, setShowInfo]     = useState(false);
   const { geocode, loading, error } = useNominatim();
   const filtersRef = useRef<HTMLDivElement>(null);
 
@@ -197,7 +199,7 @@ export default function TopBar({
 
           {/* Info */}
           <button
-            onClick={() => setShowInfo(true)}
+            onClick={() => onShowInfo(true)}
             title="About StreetLights"
             className="p-1.5 rounded-lg border border-gray-300 text-gray-500 hover:border-gray-400 hover:bg-gray-50 transition-colors"
           >
@@ -271,7 +273,7 @@ export default function TopBar({
         <div
           className="fixed inset-0 z-[9999] flex items-center justify-center"
           style={{ background: 'rgba(0,0,0,0.45)' }}
-          onClick={() => setShowInfo(false)}
+          onClick={() => onShowInfo(false)}
         >
           <div
             className="bg-white rounded-2xl p-6 max-w-sm mx-4 shadow-2xl"
@@ -298,7 +300,7 @@ export default function TopBar({
               CIP Dashboard and may not reflect the most current information. Locations are approximate.
             </p>
             <button
-              onClick={() => setShowInfo(false)}
+              onClick={() => onShowInfo(false)}
               className="mt-4 w-full py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-sm font-medium transition-colors"
             >
               Got it
