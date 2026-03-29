@@ -16,9 +16,6 @@ export default function ReportIntentPrompt({ onConfirm, onCancel }: Props) {
         className="w-full max-w-lg bg-white rounded-t-2xl p-5 pb-8 shadow-2xl"
         onClick={e => e.stopPropagation()}
       >
-        {/* Handle bar */}
-        <div className="mx-auto mb-4 h-1 w-10 rounded-full bg-gray-300" />
-
         {/* Icon */}
         <div className="flex justify-center mb-3">
           <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-100">

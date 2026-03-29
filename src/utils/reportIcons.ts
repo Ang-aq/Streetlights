@@ -4,18 +4,22 @@ import type { ReportTypeId } from '../types/report';
 export function reportIconPaths(typeId: ReportTypeId): string {
   const s = 'stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"';
   switch (typeId) {
-    case 'streetlight': // Lamp
+    case 'streetlight': // Gooseneck street lamp: pole + curved arm + round lamp + light rays
       return `
-        <path ${s} d="M12 12v6"/>
-        <path ${s} d="M4.077 10.615A1 1 0 0 0 5 12h14a1 1 0 0 0 .923-1.385l-3.077-7.384A2 2 0 0 0 15 2H9a2 2 0 0 0-1.846 1.23Z"/>
-        <path ${s} d="M8 20a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1z"/>
+        <line x1="12" y1="22" x2="12" y2="10" ${s}/>
+        <path d="M12 10 Q11 5 7 5" ${s}/>
+        <circle cx="7" cy="3.5" r="2" ${s}/>
+        <line x1="5.5" y1="5.5" x2="4.5" y2="8.5" ${s}/>
+        <line x1="7" y1="5.5" x2="7" y2="9" ${s}/>
+        <line x1="8.5" y1="5.5" x2="9.5" y2="8.5" ${s}/>
       `;
-    case 'stoplight': // TrafficCone
+    case 'stoplight': // Traffic light housing + 3 signal circles + pole
       return `
-        <path ${s} d="M16.05 10.966a5 2.5 0 0 1-8.1 0"/>
-        <path ${s} d="m16.923 14.049 4.48 2.04a1 1 0 0 1 .001 1.831l-8.574 3.9a2 2 0 0 1-1.66 0l-8.574-3.91a1 1 0 0 1 0-1.83l4.484-2.04"/>
-        <path ${s} d="M16.949 14.14a5 2.5 0 1 1-9.9 0L10.063 3.5a2 2 0 0 1 3.874 0z"/>
-        <path ${s} d="M9.194 6.57a5 2.5 0 0 0 5.61 0"/>
+        <rect x="7.5" y="1.5" width="9" height="15" rx="1.5" ${s}/>
+        <circle cx="12" cy="5.5" r="1.8" ${s}/>
+        <circle cx="12" cy="9" r="1.8" ${s}/>
+        <circle cx="12" cy="12.5" r="1.8" ${s}/>
+        <line x1="12" y1="16.5" x2="12" y2="22" ${s}/>
       `;
     case 'pothole': // Construction
       return `

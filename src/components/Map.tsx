@@ -34,12 +34,14 @@ const YOU_ARE_HERE_ICON = L.divIcon({
 // ─── Cluster layer managed imperatively ───────────────────────────────────────
 interface ClusterLayerProps {
   projects: CIPProject[];
+  selectedProjectId: string | null;
   onProjectSelect: (p: CIPProject) => void;
 }
 
-function ClusterLayer({ projects, onProjectSelect }: ClusterLayerProps) {
+function ClusterLayer({ projects, selectedProjectId, onProjectSelect }: ClusterLayerProps) {
   const map = useMap();
   const clusterGroupRef = useRef<L.MarkerClusterGroup | null>(null);
+  const markerMapRef = useRef<Map<string, L.Marker>>(new Map());
 
   useEffect(() => {
     if (!clusterGroupRef.current) {
@@ -65,9 +67,10 @@ function ClusterLayer({ projects, onProjectSelect }: ClusterLayerProps) {
     if (!group) return;
 
     group.clearLayers();
+    markerMapRef.current.clear();
 
     projects.forEach(project => {
-      const icon = createColoredIcon(project.phase);
+      const icon = createColoredIcon(project.phase, project.id);
       const marker = L.marker([project.lat, project.lng], { icon });
 
       marker.bindPopup(
@@ -81,12 +84,36 @@ function ClusterLayer({ projects, onProjectSelect }: ClusterLayerProps) {
 
       marker.on('click', (e) => {
         L.DomEvent.stopPropagation(e);
+        // Beat 1: press animation
+        const el = marker.getElement();
+        if (el) {
+          el.classList.add('marker-pressing');
+          setTimeout(() => el.classList.remove('marker-pressing'), 300);
+        }
         onProjectSelect(project);
       });
 
       group.addLayer(marker);
+      markerMapRef.current.set(project.id, marker);
     });
   }, [projects, onProjectSelect]);
+
+  // Apply selected/dimmed classes whenever selectedProjectId changes
+  useEffect(() => {
+    markerMapRef.current.forEach((marker, id) => {
+      const el = marker.getElement();
+      if (!el) return; // marker is inside a cluster — skip gracefully
+      if (selectedProjectId === null) {
+        el.classList.remove('marker-selected', 'marker-dimmed');
+      } else if (id === selectedProjectId) {
+        el.classList.add('marker-selected');
+        el.classList.remove('marker-dimmed');
+      } else {
+        el.classList.add('marker-dimmed');
+        el.classList.remove('marker-selected');
+      }
+    });
+  }, [selectedProjectId]);
 
   return null;
 }
@@ -211,6 +238,7 @@ function MapRefSetter({ mapRef }: { mapRef: RefObject<LeafletMap | null> }) {
 // ─── Main MapView ──────────────────────────────────────────────────────────────
 interface Props {
   projects: CIPProject[];
+  selectedProjectId: string | null;
   searchLocation: SearchLocation | null;
   onProjectSelect: (p: CIPProject) => void;
   mapRef: RefObject<LeafletMap | null>;
@@ -226,6 +254,7 @@ interface Props {
 
 export default function MapView({
   projects,
+  selectedProjectId,
   searchLocation,
   onProjectSelect,
   mapRef,
@@ -255,6 +284,7 @@ export default function MapView({
 
         <ClusterLayer
           projects={projects}
+          selectedProjectId={selectedProjectId}
           onProjectSelect={onProjectSelect}
         />
 
@@ -281,11 +311,11 @@ export default function MapView({
         <button
           onClick={onStartReport}
           title="Report an infrastructure issue"
-          className="absolute right-3 z-[500] p-3 bg-amber-500 hover:bg-amber-400
+          className="absolute right-3 z-[500] p-4 bg-amber-500 hover:bg-amber-400
                      text-white rounded-full shadow-lg active:scale-95 transition-all"
           style={{ bottom: bottomPad }}
         >
-          <svg width="20" height="18" viewBox="0 0 20 18" fill="none" aria-hidden="true">
+          <svg width="26" height="23" viewBox="0 0 20 18" fill="none" aria-hidden="true">
             <path
               d="M10 2L2 17h16L10 2z"
               stroke="white" strokeWidth="1.8" strokeLinejoin="round" fill="none"

@@ -69,10 +69,18 @@ export function createPinSvgString(phase: ProjectPhase, width = 28, height = 36)
   `;
 }
 
-export function createColoredIcon(phase: ProjectPhase): L.DivIcon {
+export function createColoredIcon(phase: ProjectPhase, projectId?: string): L.DivIcon {
+  const color = phaseToColor(phase);
+  const idAttr = projectId ? ` data-project-id="${projectId}"` : '';
+  const html = `
+    <div class="project-marker-wrap" style="position:relative;width:28px;height:36px;"${idAttr}>
+      <div class="marker-ring" style="color:${color};"></div>
+      ${createPinSvgString(phase, 28, 36)}
+    </div>
+  `;
   return L.divIcon({
     className: '',
-    html: createPinSvgString(phase, 28, 36),
+    html,
     iconSize: [28, 36],
     iconAnchor: [14, 36],   // tip of the pin
     popupAnchor: [0, -38],  // popup appears above the pin

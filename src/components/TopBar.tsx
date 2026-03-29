@@ -1,13 +1,7 @@
-import { useState, useRef, useEffect, type RefObject, type FormEvent } from 'react';
+import { useState, type RefObject, type FormEvent } from 'react';
 import type { Map as LeafletMap } from 'leaflet';
 import type { SearchLocation } from '../App';
-import type { CIPProject, ProjectCategory } from '../types/project';
 import { useNominatim } from '../hooks/useNominatim';
-
-const ALL_CATEGORIES: ProjectCategory[] = [
-  'Roads & Bridges', 'Utilities', 'Parks & Recreation',
-  'Public Safety', 'Schools', 'Facilities', 'Other',
-];
 
 const SAMPLE_ADDRESSES = ['25 W Main St', '2501 Monument Ave', 'Hull Street'];
 
@@ -22,10 +16,6 @@ interface Props {
   onSearch: (loc: SearchLocation) => void;
   onClearSearch: () => void;
   mapRef: RefObject<LeafletMap | null>;
-  allProjects: CIPProject[];
-  activeCategories: Set<ProjectCategory>;
-  onToggleCategory: (cat: ProjectCategory) => void;
-  onClearCategories: () => void;
   radiusMiles: number;
   radiusOptions: number[];
   onRadiusChange: (r: number) => void;
@@ -36,26 +26,11 @@ interface Props {
 
 export default function TopBar({
   searchLocation, onSearch, onClearSearch, mapRef,
-  allProjects, activeCategories, onToggleCategory, onClearCategories,
   radiusMiles, radiusOptions, onRadiusChange, nearbyCount,
   showInfo, onShowInfo,
 }: Props) {
-  const [query, setQuery]           = useState('');
-  const [showFilters, setShowFilters] = useState(false);
+  const [query, setQuery] = useState('');
   const { geocode, loading, error } = useNominatim();
-  const filtersRef = useRef<HTMLDivElement>(null);
-
-  // Close filter dropdown on outside click
-  useEffect(() => {
-    if (!showFilters) return;
-    const handler = (e: MouseEvent) => {
-      if (filtersRef.current && !filtersRef.current.contains(e.target as Node)) {
-        setShowFilters(false);
-      }
-    };
-    document.addEventListener('mousedown', handler);
-    return () => document.removeEventListener('mousedown', handler);
-  }, [showFilters]);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -80,11 +55,6 @@ export default function TopBar({
     setQuery('');
     onClearSearch();
   };
-
-  const counts = ALL_CATEGORIES.reduce<Record<string, number>>((acc, cat) => {
-    acc[cat] = allProjects.filter(p => p.category === cat).length;
-    return acc;
-  }, {});
 
   return (
     <div className="flex-none bg-white border-b border-gray-200 shadow-sm z-10">
@@ -140,62 +110,6 @@ export default function TopBar({
 
         {/* Right controls */}
         <div className="flex items-center gap-1 flex-none">
-
-          {/* Filters */}
-          <div className="relative" ref={filtersRef}>
-            <button
-              onClick={() => setShowFilters(v => !v)}
-              className={`flex items-center gap-1 px-2 py-1.5 rounded-lg text-xs font-medium border transition-colors ${
-                activeCategories.size > 0
-                  ? 'bg-slate-800 border-slate-800 text-white'
-                  : 'border-gray-300 text-gray-600 hover:border-gray-400 hover:bg-gray-50'
-              }`}
-            >
-              <svg width="13" height="11" viewBox="0 0 13 11" fill="none">
-                <path d="M1 1.5h11M3 5.5h7M5 9.5h3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-              </svg>
-              <span className="hidden sm:inline">Filters</span>
-              {activeCategories.size > 0 && (
-                <span className="bg-amber-400 text-slate-900 rounded-full text-[10px] font-bold w-4 h-4 flex items-center justify-center leading-none">
-                  {activeCategories.size}
-                </span>
-              )}
-            </button>
-
-            {showFilters && (
-              <div className="absolute right-0 top-full mt-1.5 z-[600] bg-white border border-gray-200 rounded-xl shadow-xl p-3 w-64">
-                <div className="flex items-center justify-between mb-2.5">
-                  <span className="text-xs font-semibold text-gray-700">Filter by category</span>
-                  {activeCategories.size > 0 && (
-                    <button
-                      onClick={() => { onClearCategories(); setShowFilters(false); }}
-                      className="text-xs text-slate-600 hover:text-slate-900 underline"
-                    >
-                      Clear all
-                    </button>
-                  )}
-                </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {ALL_CATEGORIES.filter(cat => counts[cat] > 0).map(cat => {
-                    const active = activeCategories.has(cat);
-                    return (
-                      <button
-                        key={cat}
-                        onClick={() => onToggleCategory(cat)}
-                        className={`text-xs px-2 py-0.5 rounded-full border font-medium transition-colors ${
-                          active
-                            ? 'bg-slate-800 border-slate-800 text-white'
-                            : 'border-gray-300 text-gray-600 hover:border-slate-500 hover:bg-gray-50'
-                        }`}
-                      >
-                        {cat} <span className={active ? 'opacity-60' : 'text-gray-400'}>{counts[cat]}</span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
-          </div>
 
           {/* Info */}
           <button

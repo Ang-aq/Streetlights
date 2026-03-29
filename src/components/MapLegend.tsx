@@ -70,11 +70,11 @@ export default function MapLegend({ dropdown = false }: MapLegendProps) {
     return (
       <button
         onClick={() => setOpen(true)}
-        className="pointer-events-auto bg-white bg-opacity-90 rounded-full shadow px-2.5 py-1 text-xs text-gray-600 font-medium flex items-center gap-1.5 hover:bg-opacity-100 transition"
+        className="pointer-events-auto bg-white bg-opacity-90 rounded-full shadow px-4 py-2 text-sm text-gray-600 font-medium flex items-center gap-2 hover:bg-opacity-100 transition"
       >
         <span
-          style={{ width: 10, height: 13, display: 'inline-block' }}
-          dangerouslySetInnerHTML={{ __html: createPinSvgString('Planning', 10, 13) }}
+          style={{ width: 14, height: 18, display: 'inline-block' }}
+          dangerouslySetInnerHTML={{ __html: createPinSvgString('Planning', 14, 18) }}
         />
         Phase key
       </button>
@@ -82,7 +82,7 @@ export default function MapLegend({ dropdown = false }: MapLegendProps) {
   }
 
   return (
-    <div className="pointer-events-auto bg-white bg-opacity-90 rounded-xl shadow-lg px-3 py-2 text-xs leading-snug">
+    <div className="pointer-events-auto bg-white bg-opacity-90 rounded-xl shadow-lg px-4 py-3 text-sm leading-snug">
       {phaseList}
     </div>
   );

@@ -13,6 +13,7 @@ export default function ProjectCard({ project, selected, onClick }: Props) {
   return (
     <button
       onClick={() => onClick(project)}
+      data-project-id={project.id}
       className={`w-full text-left px-3 py-2 border-b border-gray-100 hover:bg-slate-50 transition-colors focus:outline-none focus:bg-slate-50 ${
         selected ? 'bg-slate-50 border-l-4 border-l-slate-700' : ''
       }`}

@@ -1,15 +1,5 @@
-import { Lamp, TrafficCone, Construction, Milestone, Footprints, Waves } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import { reportIconPaths } from './reportIcons';
 import type { ReportTypeId } from '../types/report';
-
-const ICON_MAP: Record<ReportTypeId, LucideIcon> = {
-  streetlight: Lamp,
-  stoplight:   TrafficCone,
-  pothole:     Construction,
-  unpaved:     Milestone,
-  sidewalk:    Footprints,
-  flooding:    Waves,
-};
 
 interface Props {
   typeId: ReportTypeId;
@@ -17,10 +7,9 @@ interface Props {
   size?: number;
 }
 
-/** Renders a colored circle with a white lucide icon for the given report type. */
+/** Renders a colored circle with a white SVG icon for the given report type. */
 export default function ReportIcon({ typeId, color, size = 36 }: Props) {
-  const Icon = ICON_MAP[typeId] ?? Lamp;
-  const iconSize = Math.round(size * 0.55);
+  const svgSize = Math.round(size * 0.55);
 
   return (
     <div
@@ -35,7 +24,14 @@ export default function ReportIcon({ typeId, color, size = 36 }: Props) {
         flexShrink: 0,
       }}
     >
-      <Icon size={iconSize} color="white" strokeWidth={2.5} />
+      <svg
+        width={svgSize}
+        height={svgSize}
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        dangerouslySetInnerHTML={{ __html: reportIconPaths(typeId) }}
+      />
     </div>
   );
 }

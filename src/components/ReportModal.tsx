@@ -22,9 +22,6 @@ export default function ReportModal({ lat, lng, onSubmit, onCancel }: Props) {
         className="w-full max-w-lg bg-white rounded-t-2xl p-5 pb-8 shadow-2xl"
         onClick={e => e.stopPropagation()}
       >
-        {/* Handle bar */}
-        <div className="mx-auto mb-4 h-1 w-10 rounded-full bg-gray-300" />
-
         <h2 className="text-base font-semibold text-gray-900 mb-1">Report an Issue</h2>
         <p className="text-xs text-gray-500 mb-4">
           {lat.toFixed(5)}, {lng.toFixed(5)} &mdash; tap a category below

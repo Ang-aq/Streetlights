@@ -182,16 +182,12 @@ export default function App() {
   const isPickingLocation = reportingStep.kind === 'pickingLocation';
 
   return (
-    <div className="flex flex-col h-screen overflow-hidden bg-gray-50">
+    <div className="flex flex-col h-screen overflow-hidden bg-gray-50" style={{ height: '100svh' }}>
       <TopBar
         searchLocation={searchLocation}
         onSearch={handleSearch}
         onClearSearch={handleClearSearch}
         mapRef={mapRef}
-        allProjects={projects}
-        activeCategories={activeCategories}
-        onToggleCategory={handleCategoryToggle}
-        onClearCategories={handleClearCategories}
         radiusMiles={radiusMiles}
         radiusOptions={[...RADIUS_OPTIONS]}
         onRadiusChange={setRadiusMiles}
@@ -200,31 +196,7 @@ export default function App() {
         onShowInfo={setShowInfo}
       />
 
-      {/* Mobile-only controls bar: Report + Community Reports + Phase Key */}
-      {!isDesktop && (
-        <div className="flex-none flex items-center justify-end gap-2 px-3 py-1.5 bg-white border-b border-gray-100">
-          {/* Amber circle: starts the new report flow */}
-          <button
-            onClick={handleStartReport}
-            title="Report an infrastructure issue"
-            className="p-2 bg-amber-500 hover:bg-amber-400 text-white rounded-full shadow active:scale-95 transition-all"
-          >
-            <svg width="16" height="14" viewBox="0 0 20 18" fill="none" aria-hidden="true">
-              <path d="M10 2L2 17h16L10 2z" stroke="white" strokeWidth="1.8" strokeLinejoin="round" fill="none" />
-              <path d="M10 8v4" stroke="white" strokeWidth="2" strokeLinecap="round" />
-              <circle cx="10" cy="14.5" r="1.1" fill="white" />
-            </svg>
-          </button>
-          {/* Community Reports link */}
-          <button
-            onClick={() => setShowPriorityList(true)}
-            className="text-xs font-medium text-amber-700 hover:text-amber-900 px-1.5 py-1 rounded hover:bg-amber-50 transition-colors whitespace-nowrap"
-          >
-            Reports ({reports.length})
-          </button>
-          <MapLegend dropdown />
-        </div>
-      )}
+
 
       {/* Picking-location banner — shown across the top of the map */}
       {isPickingLocation && (
@@ -247,6 +219,7 @@ export default function App() {
           <div className="flex-1 relative">
             <MapView
               projects={displayProjects}
+              selectedProjectId={selectedProject?.id ?? null}
               searchLocation={searchLocation}
               onProjectSelect={handleProjectSelect}
               mapRef={mapRef}
@@ -283,8 +256,12 @@ export default function App() {
             ) : (
               <ProjectList
                 projects={displayProjects}
+                allProjects={projects}
                 selectedProject={null}
                 searchActive={!!searchLocation}
+                activeCategories={activeCategories}
+                onToggleCategory={handleCategoryToggle}
+                onClearCategories={handleClearCategories}
                 onSelect={handleProjectSelect}
               />
             )}
@@ -298,6 +275,7 @@ export default function App() {
           <div className="absolute inset-0">
             <MapView
               projects={displayProjects}
+              selectedProjectId={selectedProject?.id ?? null}
               searchLocation={searchLocation}
               onProjectSelect={handleProjectSelect}
               mapRef={mapRef}
@@ -312,7 +290,29 @@ export default function App() {
             />
           </div>
 
-          {/* Bottom sheet — 2 states: collapsed (handle only) or peek */}
+          {/* Mobile controls bar — transparent overlay, top-right of map */}
+          <div className="absolute top-2 right-2 z-[500] flex items-center gap-2">
+            {/* Amber circle: starts the new report flow */}
+            <button
+              onClick={handleStartReport}
+              title="Report an infrastructure issue"
+              className="p-2 bg-amber-500 hover:bg-amber-400 text-white rounded-full shadow-lg active:scale-95 transition-all"
+            >
+              <svg width="16" height="14" viewBox="0 0 20 18" fill="none" aria-hidden="true">
+                <path d="M10 2L2 17h16L10 2z" stroke="white" strokeWidth="1.8" strokeLinejoin="round" fill="none" />
+                <path d="M10 8v4" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                <circle cx="10" cy="14.5" r="1.1" fill="white" />
+              </svg>
+            </button>
+            {/* Community Reports link */}
+            <button
+              onClick={() => setShowPriorityList(true)}
+              className="text-xs font-medium text-amber-700 bg-white/80 backdrop-blur-sm px-2 py-1 rounded-full shadow whitespace-nowrap hover:bg-white transition-colors"
+            >
+              Reports ({reports.length})
+            </button>
+            <MapLegend dropdown />
+          </div>
           <div
             className="absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-2xl z-[400] flex flex-col overflow-hidden"
             style={{
@@ -355,8 +355,12 @@ export default function App() {
               ) : (
                 <ProjectList
                   projects={displayProjects}
+                  allProjects={projects}
                   selectedProject={null}
                   searchActive={!!searchLocation}
+                  activeCategories={activeCategories}
+                  onToggleCategory={handleCategoryToggle}
+                  onClearCategories={handleClearCategories}
                   onSelect={handleProjectSelect}
                 />
               )}
